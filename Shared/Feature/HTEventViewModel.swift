@@ -32,15 +32,14 @@ class HTEventViewModel: ObservableObject {
         
         let param = EventReqParam(month: month, day: day, pageIndex: events.count, pageSize: 20, type: .all)
         HTEventReqService.fetchEvents(param)
-            .sink(receiveCompletion: {
-                switch $0 {
-                case .finished:
-                    self.hasMore = false
-                case .failure(let err):
-                    os_log(.error, "【HTEventViewModel】%s", err.localizedDescription)
-                }
+            .sink(receiveCompletion: { _ in
+                
             }, receiveValue: {
-                self.events.append(contentsOf: $0)
+                if $0.count == 0 {
+                    self.hasMore = false
+                } else {
+                    self.events.append(contentsOf: $0)
+                }
             })
             .store(in: &cancellable)
     }
