@@ -87,7 +87,11 @@ extension HTCoreDataManager {
         let publisher = CurrentValueSubject<[HTEvent], Error>([])
         do {
             let result: [HTEvent] = try context.fetch(fetchReq)
-            publisher.send(result)
+            if result.count == 0 {
+                publisher.send(completion: .failure(NSError(domain: "", code: -1, userInfo: nil)))
+            } else {
+                publisher.send(result)
+            }
         } catch {
             publisher.send(completion: .failure(error))
             os_log(.error, "【CoreData】get events error, month = %d, day = %d", param.month, param.day)

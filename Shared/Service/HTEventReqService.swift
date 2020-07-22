@@ -54,12 +54,6 @@ class HTEventReqService {
         
         return HTCoreDataManager.shared.getEvents(param)
             .receive(on: DispatchQueue.main)
-            .tryMap {
-                if $0.count == 0 {
-                    throw NSError(domain: "", code: -1, userInfo: nil)
-                }
-                return $0
-            }
             .catch { _ in
                 return publisher
             }
