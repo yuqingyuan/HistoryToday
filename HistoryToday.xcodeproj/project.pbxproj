@@ -3,18 +3,32 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0509E2DA24AC6BE300B05842 /* HTCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0509E2D924AC6BE300B05842 /* HTCoreDataManager.swift */; };
+		0509E2DB24AC6BE300B05842 /* HTCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0509E2D924AC6BE300B05842 /* HTCoreDataManager.swift */; };
+		0509E2E324AC886C00B05842 /* HTDateTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0509E2E224AC886C00B05842 /* HTDateTool.swift */; };
+		0509E2E424AC886C00B05842 /* HTDateTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0509E2E224AC886C00B05842 /* HTDateTool.swift */; };
+		0509E2E624AC8C6000B05842 /* HTStringTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0509E2E524AC8C6000B05842 /* HTStringTool.swift */; };
+		05145FE324AB63D0006A0EFA /* HTEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05145FE224AB63D0006A0EFA /* HTEvent.swift */; };
+		05145FE424AB63D0006A0EFA /* HTEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05145FE224AB63D0006A0EFA /* HTEvent.swift */; };
+		051CEC5C24A336E8004B4CDA /* HTCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051CEC5B24A336E8004B4CDA /* HTCardView.swift */; };
+		051CEC5F24A3504A004B4CDA /* HTScreenEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051CEC5E24A3504A004B4CDA /* HTScreenEx.swift */; };
+		0526276024C5BAE900EFE562 /* HTEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526275F24C5BAE900EFE562 /* HTEventViewModel.swift */; };
 		055BBF5324A1D862003DD601 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055BBF5224A1D862003DD601 /* Tests_iOS.swift */; };
 		055BBF5E24A1D862003DD601 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055BBF5D24A1D862003DD601 /* Tests_macOS.swift */; };
-		055BBF6024A1D862003DD601 /* HistoryTodayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055BBF3724A1D861003DD601 /* HistoryTodayApp.swift */; };
-		055BBF6124A1D862003DD601 /* HistoryTodayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055BBF3724A1D861003DD601 /* HistoryTodayApp.swift */; };
-		055BBF6224A1D862003DD601 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055BBF3824A1D861003DD601 /* ContentView.swift */; };
-		055BBF6324A1D862003DD601 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055BBF3824A1D861003DD601 /* ContentView.swift */; };
+		055BBF6024A1D862003DD601 /* HTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055BBF3724A1D861003DD601 /* HTApp.swift */; };
+		055BBF6124A1D862003DD601 /* HTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055BBF3724A1D861003DD601 /* HTApp.swift */; };
 		055BBF6424A1D862003DD601 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 055BBF3924A1D862003DD601 /* Assets.xcassets */; };
 		055BBF6524A1D862003DD601 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 055BBF3924A1D862003DD601 /* Assets.xcassets */; };
+		055BBF7724A1F015003DD601 /* HTMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055BBF7624A1F015003DD601 /* HTMainView.swift */; };
+		05B8893424C072EF000ABA7C /* HTEventReqService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B8893324C072EF000ABA7C /* HTEventReqService.swift */; };
+		05FC772224AD8FA900F68588 /* HTEventsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 05FC772024AD8FA900F68588 /* HTEventsModel.xcdatamodeld */; };
+		05FC772324AD8FA900F68588 /* HTEventsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 05FC772024AD8FA900F68588 /* HTEventsModel.xcdatamodeld */; };
+		05FC774B24AE03ED00F68588 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 05FC774A24AE03ED00F68588 /* SwiftyJSON */; };
+		05FC774E24AE04F300F68588 /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 05FC774D24AE04F300F68588 /* KingfisherSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,8 +49,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		055BBF3724A1D861003DD601 /* HistoryTodayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTodayApp.swift; sourceTree = "<group>"; };
-		055BBF3824A1D861003DD601 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0509E2D924AC6BE300B05842 /* HTCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTCoreDataManager.swift; sourceTree = "<group>"; };
+		0509E2E224AC886C00B05842 /* HTDateTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTDateTool.swift; sourceTree = "<group>"; };
+		0509E2E524AC8C6000B05842 /* HTStringTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTStringTool.swift; sourceTree = "<group>"; };
+		05145FE224AB63D0006A0EFA /* HTEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTEvent.swift; sourceTree = "<group>"; };
+		051CEC5B24A336E8004B4CDA /* HTCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTCardView.swift; sourceTree = "<group>"; };
+		051CEC5E24A3504A004B4CDA /* HTScreenEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTScreenEx.swift; sourceTree = "<group>"; };
+		0526275F24C5BAE900EFE562 /* HTEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTEventViewModel.swift; sourceTree = "<group>"; };
+		055BBF3724A1D861003DD601 /* HTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTApp.swift; sourceTree = "<group>"; };
 		055BBF3924A1D862003DD601 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		055BBF3E24A1D862003DD601 /* HistoryToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HistoryToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		055BBF4124A1D862003DD601 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +69,9 @@
 		055BBF5924A1D862003DD601 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		055BBF5D24A1D862003DD601 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		055BBF5F24A1D862003DD601 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		055BBF7624A1F015003DD601 /* HTMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMainView.swift; sourceTree = "<group>"; };
+		05B8893324C072EF000ABA7C /* HTEventReqService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTEventReqService.swift; sourceTree = "<group>"; };
+		05FC772124AD8FA900F68588 /* HTEventsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HTEventsModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +79,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05FC774E24AE04F300F68588 /* KingfisherSwiftUI in Frameworks */,
+				05FC774B24AE03ED00F68588 /* SwiftyJSON in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +108,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05145F5624AB3A16006A0EFA /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				05FC772024AD8FA900F68588 /* HTEventsModel.xcdatamodeld */,
+				05145FE224AB63D0006A0EFA /* HTEvent.swift */,
+				0509E2D924AC6BE300B05842 /* HTCoreDataManager.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		051CEC5D24A35024004B4CDA /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				051CEC5E24A3504A004B4CDA /* HTScreenEx.swift */,
+				0509E2E224AC886C00B05842 /* HTDateTool.swift */,
+				0509E2E524AC8C6000B05842 /* HTStringTool.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		055BBF3124A1D861003DD601 = {
 			isa = PBXGroup;
 			children = (
@@ -94,13 +139,17 @@
 				055BBF3F24A1D862003DD601 /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		055BBF3624A1D861003DD601 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				055BBF3724A1D861003DD601 /* HistoryTodayApp.swift */,
-				055BBF3824A1D861003DD601 /* ContentView.swift */,
-				055BBF3924A1D862003DD601 /* Assets.xcassets */,
+				055BBF3724A1D861003DD601 /* HTApp.swift */,
+				055BBF7524A1EFCF003DD601 /* Feature */,
+				051CEC5D24A35024004B4CDA /* Util */,
+				05B8893224C053F5000ABA7C /* Service */,
+				05145F5624AB3A16006A0EFA /* CoreData */,
+				056932CA24AA136500A78E5D /* Resource */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -151,6 +200,32 @@
 			path = "Tests macOS";
 			sourceTree = "<group>";
 		};
+		055BBF7524A1EFCF003DD601 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				055BBF7624A1F015003DD601 /* HTMainView.swift */,
+				051CEC5B24A336E8004B4CDA /* HTCardView.swift */,
+				0526275F24C5BAE900EFE562 /* HTEventViewModel.swift */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		056932CA24AA136500A78E5D /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				055BBF3924A1D862003DD601 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		05B8893224C053F5000ABA7C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				05B8893324C072EF000ABA7C /* HTEventReqService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -167,6 +242,10 @@
 			dependencies = (
 			);
 			name = iOS;
+			packageProductDependencies = (
+				05FC774A24AE03ED00F68588 /* SwiftyJSON */,
+				05FC774D24AE04F300F68588 /* KingfisherSwiftUI */,
+			);
 			productName = iOS;
 			productReference = 055BBF3E24A1D862003DD601 /* HistoryToday.app */;
 			productType = "com.apple.product-type.application";
@@ -230,8 +309,10 @@
 		055BBF3224A1D861003DD601 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = HT;
 				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
+				ORGANIZATIONNAME = yuqingyuan;
 				TargetAttributes = {
 					055BBF3D24A1D862003DD601 = {
 						CreatedOnToolsVersion = 12.0;
@@ -258,6 +339,10 @@
 				Base,
 			);
 			mainGroup = 055BBF3124A1D861003DD601;
+			packageReferences = (
+				05FC774924AE03ED00F68588 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				05FC774C24AE04F300F68588 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 055BBF3F24A1D862003DD601 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -308,8 +393,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				055BBF6224A1D862003DD601 /* ContentView.swift in Sources */,
-				055BBF6024A1D862003DD601 /* HistoryTodayApp.swift in Sources */,
+				0526276024C5BAE900EFE562 /* HTEventViewModel.swift in Sources */,
+				051CEC5F24A3504A004B4CDA /* HTScreenEx.swift in Sources */,
+				05B8893424C072EF000ABA7C /* HTEventReqService.swift in Sources */,
+				0509E2E624AC8C6000B05842 /* HTStringTool.swift in Sources */,
+				05145FE324AB63D0006A0EFA /* HTEvent.swift in Sources */,
+				0509E2E324AC886C00B05842 /* HTDateTool.swift in Sources */,
+				051CEC5C24A336E8004B4CDA /* HTCardView.swift in Sources */,
+				055BBF6024A1D862003DD601 /* HTApp.swift in Sources */,
+				05FC772224AD8FA900F68588 /* HTEventsModel.xcdatamodeld in Sources */,
+				0509E2DA24AC6BE300B05842 /* HTCoreDataManager.swift in Sources */,
+				055BBF7724A1F015003DD601 /* HTMainView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,8 +411,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				055BBF6324A1D862003DD601 /* ContentView.swift in Sources */,
-				055BBF6124A1D862003DD601 /* HistoryTodayApp.swift in Sources */,
+				0509E2DB24AC6BE300B05842 /* HTCoreDataManager.swift in Sources */,
+				05FC772324AD8FA900F68588 /* HTEventsModel.xcdatamodeld in Sources */,
+				0509E2E424AC886C00B05842 /* HTDateTool.swift in Sources */,
+				055BBF6124A1D862003DD601 /* HTApp.swift in Sources */,
+				05145FE424AB63D0006A0EFA /* HTEvent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +502,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -458,6 +556,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -696,6 +795,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		05FC774924AE03ED00F68588 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		05FC774C24AE04F300F68588 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.14.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		05FC774A24AE03ED00F68588 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 05FC774924AE03ED00F68588 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		05FC774D24AE04F300F68588 /* KingfisherSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 05FC774C24AE04F300F68588 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = KingfisherSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		05FC772024AD8FA900F68588 /* HTEventsModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				05FC772124AD8FA900F68588 /* HTEventsModel.xcdatamodel */,
+			);
+			currentVersion = 05FC772124AD8FA900F68588 /* HTEventsModel.xcdatamodel */;
+			path = HTEventsModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 055BBF3224A1D861003DD601 /* Project object */;
 }

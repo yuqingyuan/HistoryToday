@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct HistoryTodayApp: App {
+struct HTApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HTMainView()
         }
     }
 }
