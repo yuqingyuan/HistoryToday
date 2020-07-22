@@ -7,6 +7,8 @@
 //
 
 import Foundation
+
+#if !os(macOS)
 import UIKit
 
 var screenWidth: CGFloat {
@@ -31,3 +33,4 @@ func scaleW(_ value: CGFloat) -> CGFloat {
 func scaleH(_ value: CGFloat) -> CGFloat {
     return (value / 667.0) * (screenHeight - homeIndicatorHeight)
 }
+#endif

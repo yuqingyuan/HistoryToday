@@ -24,6 +24,13 @@
 		055BBF6424A1D862003DD601 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 055BBF3924A1D862003DD601 /* Assets.xcassets */; };
 		055BBF6524A1D862003DD601 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 055BBF3924A1D862003DD601 /* Assets.xcassets */; };
 		055BBF7724A1F015003DD601 /* HTMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055BBF7624A1F015003DD601 /* HTMainView.swift */; };
+		05AA3BAD24C82DDE00B71ED3 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 05AA3BAC24C82DDE00B71ED3 /* SwiftyJSON */; };
+		05AA3BAE24C832C400B71ED3 /* HTEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526275F24C5BAE900EFE562 /* HTEventViewModel.swift */; };
+		05AA3BAF24C832C400B71ED3 /* HTCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051CEC5B24A336E8004B4CDA /* HTCardView.swift */; };
+		05AA3BB024C832C400B71ED3 /* HTMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055BBF7624A1F015003DD601 /* HTMainView.swift */; };
+		05AA3BB124C832E100B71ED3 /* HTScreenEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051CEC5E24A3504A004B4CDA /* HTScreenEx.swift */; };
+		05AA3BB224C832E100B71ED3 /* HTEventReqService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B8893324C072EF000ABA7C /* HTEventReqService.swift */; };
+		05AA3BB324C832E100B71ED3 /* HTStringTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0509E2E524AC8C6000B05842 /* HTStringTool.swift */; };
 		05B8893424C072EF000ABA7C /* HTEventReqService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B8893324C072EF000ABA7C /* HTEventReqService.swift */; };
 		05FC772224AD8FA900F68588 /* HTEventsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 05FC772024AD8FA900F68588 /* HTEventsModel.xcdatamodeld */; };
 		05FC772324AD8FA900F68588 /* HTEventsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 05FC772024AD8FA900F68588 /* HTEventsModel.xcdatamodeld */; };
@@ -88,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05AA3BAD24C82DDE00B71ED3 /* SwiftyJSON in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +145,7 @@
 				055BBF5124A1D862003DD601 /* Tests iOS */,
 				055BBF5C24A1D862003DD601 /* Tests macOS */,
 				055BBF3F24A1D862003DD601 /* Products */,
+				05AA3BAB24C82DDE00B71ED3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 			usesTabs = 0;
@@ -218,6 +227,13 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		05AA3BAB24C82DDE00B71ED3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		05B8893224C053F5000ABA7C /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +279,9 @@
 			dependencies = (
 			);
 			name = macOS;
+			packageProductDependencies = (
+				05AA3BAC24C82DDE00B71ED3 /* SwiftyJSON */,
+			);
 			productName = macOS;
 			productReference = 055BBF4624A1D862003DD601 /* HistoryToday.app */;
 			productType = "com.apple.product-type.application";
@@ -411,11 +430,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05AA3BB124C832E100B71ED3 /* HTScreenEx.swift in Sources */,
+				05AA3BB224C832E100B71ED3 /* HTEventReqService.swift in Sources */,
 				0509E2DB24AC6BE300B05842 /* HTCoreDataManager.swift in Sources */,
+				05AA3BAF24C832C400B71ED3 /* HTCardView.swift in Sources */,
 				05FC772324AD8FA900F68588 /* HTEventsModel.xcdatamodeld in Sources */,
 				0509E2E424AC886C00B05842 /* HTDateTool.swift in Sources */,
+				05AA3BAE24C832C400B71ED3 /* HTEventViewModel.swift in Sources */,
 				055BBF6124A1D862003DD601 /* HTApp.swift in Sources */,
 				05145FE424AB63D0006A0EFA /* HTEvent.swift in Sources */,
+				05AA3BB324C832E100B71ED3 /* HTStringTool.swift in Sources */,
+				05AA3BB024C832C400B71ED3 /* HTMainView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -816,6 +841,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		05AA3BAC24C82DDE00B71ED3 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 05FC774924AE03ED00F68588 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
 		05FC774A24AE03ED00F68588 /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 05FC774924AE03ED00F68588 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
