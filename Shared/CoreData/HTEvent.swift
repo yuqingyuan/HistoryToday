@@ -15,7 +15,7 @@ public class HTEventManagedObject: NSManagedObject {
 }
 
 @objc(HTEvent)
-public final class HTEvent: HTEventManagedObject {
+public final class HTEvent: HTEventManagedObject, Identifiable {
     
     @nonobjc public class func fetchRequest() -> NSFetchRequest<HTEvent> {
         return NSFetchRequest<HTEvent>(entityName: "HTEvent")
@@ -37,7 +37,9 @@ public final class HTEvent: HTEventManagedObject {
         type = json["type"].int16Value
         year = json["year"].stringValue
         detail = json["detail"].stringValue
-        imgs = json["imgs"].stringValue.components(separatedBy: ",")
+        imgs = json["images"].arrayValue
+            .filter { $0.stringValue.count != 0 }
+            .map { "https://upload.wikimedia.org/wikipedia" + $0.stringValue }
         
         if let data = json["links"].stringValue.data(using: .utf8),
            let linkDict = JSON(data).dictionaryObject as? Dictionary<String, String> {

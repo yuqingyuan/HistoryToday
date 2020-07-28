@@ -7,30 +7,33 @@
 //
 
 import Foundation
-
 #if !os(macOS)
 import UIKit
+#else
+import AppKit
+#endif
 
 var screenWidth: CGFloat {
-    UIScreen.main.bounds.size.width
+    #if !os(macOS)
+    return UIScreen.main.bounds.size.width
+    #else
+    return NSScreen.main!.frame.size.width
+    #endif
 }
 
 var screenHeight: CGFloat {
-    UIScreen.main.bounds.size.height
+    #if !os(macOS)
+    return UIScreen.main.bounds.size.height
+    #else
+    return NSScreen.main!.frame.size.height
+    #endif
 }
 
+#if !os(macOS)
 var homeIndicatorHeight: CGFloat {
     if let delegate = UIApplication.shared.delegate, let window = delegate.window {
         return window?.safeAreaInsets.bottom ?? 0
     }
     return 0
-}
-
-func scaleW(_ value: CGFloat) -> CGFloat {
-    return (screenWidth / 375.0) * value
-}
-
-func scaleH(_ value: CGFloat) -> CGFloat {
-    return (value / 667.0) * (screenHeight - homeIndicatorHeight)
 }
 #endif

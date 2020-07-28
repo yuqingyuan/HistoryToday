@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct HTMainView: View {
-    
     var body: some View {
-        HTCardView()
+        HTCardListView()
     }
 }
 

@@ -8,7 +8,6 @@
 
 import Foundation
 import Combine
-import OSLog
 
 class HTEventViewModel: ObservableObject {
     
@@ -25,22 +24,21 @@ class HTEventViewModel: ObservableObject {
         loadMoreData()
     }
     
-    func loadMoreData() {
+    func loadMoreData(_ item: HTEvent? = nil) {
         if !hasMore {
             return
         }
         
-        let param = EventReqParam(month: month, day: day, pageIndex: events.count, pageSize: 20, type: .all)
-        HTEventReqService.fetchEvents(param)
-            .sink(receiveCompletion: { _ in
-                
-            }, receiveValue: {
-                if $0.count == 0 {
-                    self.hasMore = false
-                } else {
-                    self.events.append(contentsOf: $0)
-                }
-            })
-            .store(in: &cancellable)
+        let param = EventReqParam(month: month, day: day, pageIndex: events.count, pageSize: 200, type: .all)
+        HTEventReqService.fetchEvents(param).sink { _ in
+            
+        } receiveValue: {
+            if $0.count == 0 {
+                self.hasMore = false
+            } else {
+                self.events.append(contentsOf: $0)
+            }
+        }
+        .store(in: &cancellable)
     }
 }

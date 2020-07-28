@@ -9,24 +9,22 @@
 import SwiftUI
 
 struct HTCardView: View {
-    
-    @ObservedObject var eventVM = HTEventViewModel()
+    @Binding var event: HTEvent
     
     var body: some View {
-        ZStack {
-            List(eventVM.events, id: \.id) {
-                Text($0.detail)
-            }
-            
-            Button("更多内容") {
-                eventVM.loadMoreData()
-            }
+        VStack {
+            Text(event.detail)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 
 struct HTCardView_Previews: PreviewProvider {
+    
     static var previews: some View {
-        HTCardView()
+        GeometryReader { geo in
+            HTCardView(event: .constant(HTEvent()))
+                .padding(.all, 10)
+        }
     }
 }
