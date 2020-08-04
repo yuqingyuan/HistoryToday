@@ -11,20 +11,15 @@ import SwiftUI
 struct HTCardListView: View {
 
     @ObservedObject var eventVM = HTEventViewModel()
-
+    
     var body: some View {
-        ScrollView(showsIndicators: false) {
-            LazyVStack {
-                ForEach(eventVM.events, id: \.self) { event in
-                    VStack {
-                        HTCardView(event: .constant(event))
-                            .frame(height: 450, alignment: .center)
-                            .padding([.leading, .trailing], 10)
-                    }
+        HTPagedTableView(items: $eventVM.events) { event in
+            VStack {
+                HTCardView(event: event)
                     .frame(width: screenWidth, height: screenHeight)
-                }
             }
         }
+        .frame(width: screenWidth, height: screenHeight)
     }
 }
 

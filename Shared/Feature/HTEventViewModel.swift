@@ -29,7 +29,7 @@ class HTEventViewModel: ObservableObject {
             return
         }
         
-        let param = EventReqParam(month: month, day: day, pageIndex: events.count, pageSize: 200, type: .all)
+        let param = EventReqParam(month: month, day: day, pageIndex: events.count, pageSize: 3, type: .all)
         HTEventReqService.fetchEvents(param).sink { _ in
             
         } receiveValue: {

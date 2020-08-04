@@ -7,24 +7,68 @@
 //
 
 import SwiftUI
+import KingfisherSwiftUI
+import struct Kingfisher.DownsamplingImageProcessor
 
 struct HTCardView: View {
-    @Binding var event: HTEvent
+    let event: HTEvent
     
     var body: some View {
         VStack {
-            Text(event.detail)
+            Spacer(minLength: statusBarHeight)
+            
+            HStack {
+                Text("July")
+                    .font(.largeTitle)
+                Spacer()
+            }
+            .padding([.leading, .top])
+            
+            HTCarouselView(imgURLs: event.imgs)
+                .frame(width: screenWidth, height: fitHeight(260))
+            
+            HTHyperLinkText(text: event.detail, configuration: event.links) { _ in
+                
+            }
+            .padding()
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 
-struct HTCardView_Previews: PreviewProvider {
+struct HTCarouselView: View {
     
-    static var previews: some View {
+    let imgURLs: [String]
+    
+    var body: some View {
         GeometryReader { geo in
-            HTCardView(event: .constant(HTEvent()))
-                .padding(.all, 10)
+            ScrollView(.horizontal, showsIndicators: false) {
+                LazyHStack {
+                    ForEach(imgURLs, id: \.self) {
+                        KFImage(URL(string: $0),
+                                options: [
+                                    .processor(
+                                        DownsamplingImageProcessor(size: CGSize(width: geo.size.width - 40,
+                                                                                height: geo.size.height - 40))
+                                    )
+                                ])
+                            .cancelOnDisappear(true)
+                            .resizable()
+                            .frame(width: geo.size.width - 40, height: geo.size.height - 40)
+                            .background(Color.white)
+                            .cornerRadius(10)
+                            .shadow(radius: 4)
+                    }
+                }
+                .padding()
+            }
         }
     }
 }
+
+#if DEBUG
+struct HTCardView_Preview: PreviewProvider {
+    static var previews: some View {
+        HTCardView(event: preview_event)
+    }
+}
+#endif

@@ -36,4 +36,18 @@ var homeIndicatorHeight: CGFloat {
     }
     return 0
 }
+
+var statusBarHeight: CGFloat {
+    UIApplication.shared.windows
+        .filter { $0.isKeyWindow }
+        .first?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+}
+
+func fitWidth(_ width: CGFloat) -> CGFloat {
+    return width*(screenWidth/375.0)
+}
+
+func fitHeight(_ height: CGFloat) -> CGFloat {
+    return height*(screenHeight/667.0)
+}
 #endif

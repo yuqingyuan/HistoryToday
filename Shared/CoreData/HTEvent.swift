@@ -27,7 +27,7 @@ public final class HTEvent: HTEventManagedObject, Identifiable {
     @NSManaged public private(set) var date: String
     @NSManaged public private(set) var detail: String
     @NSManaged public private(set) var links: Dictionary<String, String>?
-    @NSManaged public private(set) var imgs: [String]?
+    @NSManaged public private(set) var imgs: [String]
     
     public convenience init(_ entity: NSEntityDescription, json: JSON, date: String, context: NSManagedObjectContext) {
         self.init(entity: entity, insertInto: context)
@@ -47,3 +47,11 @@ public final class HTEvent: HTEventManagedObject, Identifiable {
         }
     }
 }
+
+#if DEBUG
+var preview_event: HTEvent {
+    let path = Bundle.main.path(forResource: "HTEventTest", ofType: "json")!
+    let json = try! JSON(data: Data(contentsOf: URL(fileURLWithPath: path)))
+    return HTEvent(HTCoreDataManager.shared.entity!, json: json, date: "1-1", context: HTCoreDataManager.shared.context)
+}
+#endif
