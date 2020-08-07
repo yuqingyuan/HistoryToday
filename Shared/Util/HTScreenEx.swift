@@ -50,4 +50,8 @@ func fitWidth(_ width: CGFloat) -> CGFloat {
 func fitHeight(_ height: CGFloat) -> CGFloat {
     return height*(screenHeight/667.0)
 }
+
+func fitFont(_ font: CGFloat) -> CGFloat {
+    return fitHeight(font)
+}
 #endif

@@ -12,7 +12,7 @@ struct HTHyperLinkText: UIViewRepresentable {
     
     let text: String
     let configuration: Dictionary<String, String>?
-    let onTap: (String) -> ()
+    let onTap: (String, String) -> ()
     
     func makeUIView(context: Context) -> UITextView {
         let textView = UITextView()
@@ -38,14 +38,15 @@ struct HTHyperLinkText: UIViewRepresentable {
     
     class Coordinator: NSObject, UITextViewDelegate {
         
-        let onTap: (String) -> ()
+        let onTap: (String, String) -> ()
         
-        init(_ onTap: @escaping (String) -> ()) {
+        init(_ onTap: @escaping (String, String) -> ()) {
             self.onTap = onTap
         }
         
         func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
-            self.onTap(URL.absoluteString)
+            let range = Range(characterRange, in: textView.text)
+            self.onTap(URL.absoluteString, String(textView.text[range!]))
             return false
         }
     }
@@ -56,18 +57,17 @@ extension UITextView {
         let style = NSMutableParagraphStyle()
         style.alignment = .left
         let attributedText = NSMutableAttributedString(string: original)
-        if let hypers = hypers {
-            for (hyper, link) in hypers {
-                let linkRange = attributedText.mutableString.range(of: hyper)
-                let fullRange = NSRange(location: 0, length: attributedText.length)
-                attributedText.addAttribute(.link, value: link, range: linkRange)
-                attributedText.addAttribute(.paragraphStyle, value: style, range: fullRange)
-                attributedText.addAttribute(.font, value: UIFont.systemFont(ofSize: 20), range: fullRange)
-            }
-            self.linkTextAttributes = [
-                .foregroundColor: UIColor.blue
-            ]
+        let fullRange = NSRange(location: 0, length: attributedText.length)
+        for (hyper, link) in hypers ?? [:] {
+            let linkRange = attributedText.mutableString.range(of: hyper)
+            attributedText.addAttribute(.link, value: link, range: linkRange)
         }
+        self.linkTextAttributes = [
+            .foregroundColor: UIColor.blue,
+            .underlineStyle: NSUnderlineStyle.single.rawValue
+        ]
+        attributedText.addAttribute(.paragraphStyle, value: style, range: fullRange)
+        attributedText.addAttribute(.font, value: UIFont.systemFont(ofSize: fitFont(18)), range: fullRange)
         self.attributedText = attributedText
     }
 }

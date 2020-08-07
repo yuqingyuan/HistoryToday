@@ -29,7 +29,7 @@ class HTEventViewModel: ObservableObject {
             return
         }
         
-        let param = EventReqParam(month: month, day: day, pageIndex: events.count, pageSize: 3, type: .all)
+        let param = EventReqParam(month: month, day: day, pageIndex: events.count, pageSize: 200, type: .all)
         HTEventReqService.fetchEvents(param).sink { _ in
             
         } receiveValue: {
@@ -42,3 +42,11 @@ class HTEventViewModel: ObservableObject {
         .store(in: &cancellable)
     }
 }
+
+#if DEBUG
+var preview_eventVM: HTEventViewModel {
+    let viewmodel = HTEventViewModel()
+    viewmodel.events.append(contentsOf: Array(repeating: preview_event, count: 10))
+    return viewmodel
+}
+#endif
