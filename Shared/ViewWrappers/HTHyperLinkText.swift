@@ -22,6 +22,8 @@ struct HTHyperLinkText: UIViewRepresentable {
         textView.isEditable = false
         textView.isSelectable = true
         textView.delegate = context.coordinator
+        textView.showsVerticalScrollIndicator = false
+        textView.showsHorizontalScrollIndicator = false
         return textView
     }
     
@@ -63,11 +65,10 @@ extension UITextView {
             attributedText.addAttribute(.link, value: link, range: linkRange)
         }
         self.linkTextAttributes = [
-            .foregroundColor: UIColor.blue,
-            .underlineStyle: NSUnderlineStyle.single.rawValue
+            .foregroundColor: UIColor.blue
         ]
         attributedText.addAttribute(.paragraphStyle, value: style, range: fullRange)
-        attributedText.addAttribute(.font, value: UIFont.systemFont(ofSize: fitFont(18)), range: fullRange)
+        attributedText.addAttribute(.font, value: UIFont(name: commonFontName, size: fitFont(18))!, range: fullRange)
         self.attributedText = attributedText
     }
 }

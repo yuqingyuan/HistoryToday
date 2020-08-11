@@ -11,7 +11,11 @@ import SwiftUI
 struct HTApp: App {
     var body: some Scene {
         WindowGroup {
+            #if !os(macOS)
             HTMainView()
+            #else
+            Text("Hello")
+            #endif
         }
     }
 }

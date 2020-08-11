@@ -1,5 +1,5 @@
 //
-//  HTScreenEx.swift
+//  HTUIExtension.swift
 //  iOS
 //
 //  Created by yuqingyuan on 2020/6/24.
@@ -55,3 +55,5 @@ func fitFont(_ font: CGFloat) -> CGFloat {
     return fitHeight(font)
 }
 #endif
+
+var commonFontName = "FZKai-Z03S"

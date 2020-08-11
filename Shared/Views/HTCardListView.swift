@@ -11,31 +11,43 @@ import SwiftUI
 struct HTCardListView: View {
 
     @ObservedObject var eventVM = HTEventViewModel()
-    @State var presentSideMenu = false
     
     var body: some View {
-        HTPagedCollectionView(items: $eventVM.events, direction: .vertical) { event, index in
-            VStack {
-                HStack {
-                    Text("July")
-                        .font(.largeTitle)
-
-                    Spacer()
-
-                    Button(action: {
-                        withAnimation {
-                            presentSideMenu.toggle()
-                        }
-                    }) {
-                        Image(systemName: "sidebar.left")
-                    }
-                }
-                .padding([.leading, .top, .trailing])
-
+        VStack {
+            HTCardListHeaderView(date: "\(eventVM.month)月\(eventVM.day)日 ")
+                .padding([.leading, .trailing])
+            
+            HTPagedCollectionView(items: $eventVM.events, direction: .vertical) { event, index in
                 HTCardView(event: event)
             }
+            .ignoresSafeArea(.container, edges: [.bottom])
         }
-        .ignoresSafeArea(.container, edges: [.bottom])
+    }
+}
+
+struct HTCardListHeaderView: View {
+    
+    var date: String
+    
+    var body: some View {
+        HStack {
+            Button(action: {
+                
+            }, label: {
+                Image(systemName: "books.vertical")
+                    .font(Font.system(.title).weight(.light))
+            })
+            .padding([.top])
+            
+            Spacer()
+            
+            VStack(alignment: .trailing) {
+                Text(date)
+                    .font(.custom(commonFontName, size: 20))
+                Text("历史上的今天")
+                    .font(.custom(commonFontName, size: 30))
+            }
+        }
     }
 }
 

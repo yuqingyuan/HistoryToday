@@ -20,9 +20,19 @@ struct HTCardView: View {
     @State var keyLink: HTEventKeywordLink?
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             HTCarouselView(imgURLs: event.imgs)
                 .frame(width: screenWidth, height: fitHeight(260))
+            
+            HStack(spacing: 0) {
+                Text(event.displayYear)
+                    .font(.custom(commonFontName, size: 60))
+                Text(event.displayType)
+                    .font(.custom(commonFontName, size: 30))
+                    .padding([.top])
+                Spacer()
+            }
+            .padding([.leading])
             
             HTHyperLinkText(text: event.detail, configuration: event.links) { _, keyword in
                 keyLink = HTEventKeywordLink(link: "https://baike.baidu.com/item/"+keyword)
