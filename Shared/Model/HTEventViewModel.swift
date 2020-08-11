@@ -13,6 +13,7 @@ class HTEventViewModel: ObservableObject {
     
     @Published var events = [HTEvent]()
     @Published var hasMore: Bool = true
+    var isLoading: Bool = false
     var month: Int
     var day: Int
     
@@ -25,11 +26,13 @@ class HTEventViewModel: ObservableObject {
     }
     
     func loadMoreData(_ item: HTEvent? = nil) {
-        if !hasMore {
+        if !hasMore || isLoading {
             return
         }
         
-        let param = EventReqParam(month: month, day: day, pageIndex: events.count, pageSize: 200, type: .all)
+        isLoading = true
+        
+        let param = EventReqParam(month: month, day: day, pageIndex: events.count, pageSize: 10, type: .all)
         HTEventReqService.fetchEvents(param).sink { _ in
             
         } receiveValue: {
@@ -38,6 +41,7 @@ class HTEventViewModel: ObservableObject {
             } else {
                 self.events.append(contentsOf: $0)
             }
+            self.isLoading = false
         }
         .store(in: &cancellable)
     }

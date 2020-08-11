@@ -69,6 +69,7 @@ extension UITextView {
         ]
         attributedText.addAttribute(.paragraphStyle, value: style, range: fullRange)
         attributedText.addAttribute(.font, value: UIFont(name: commonFontName, size: fitFont(18))!, range: fullRange)
+        attributedText.addAttribute(.foregroundColor, value: UIColor(named: "mainTextColor")!, range: fullRange)
         self.attributedText = attributedText
     }
 }

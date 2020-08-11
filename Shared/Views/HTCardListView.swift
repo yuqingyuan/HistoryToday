@@ -17,8 +17,12 @@ struct HTCardListView: View {
             HTCardListHeaderView(date: "\(eventVM.month)月\(eventVM.day)日 ")
                 .padding([.leading, .trailing])
             
-            HTPagedCollectionView(items: $eventVM.events, direction: .vertical) { event, index in
+            HTPagedCollectionView(items: $eventVM.events, direction: .vertical) { event in
                 HTCardView(event: event)
+            } willDisplay: { index in
+                if index == eventVM.events.count - 1 {
+                    eventVM.loadMoreData()
+                }
             }
             .ignoresSafeArea(.container, edges: [.bottom])
         }

@@ -54,7 +54,7 @@ struct HTCarouselView: View {
             if imgURLs.count == 0 {
                 HTImageLostView()
             } else {
-                HTPagedCollectionView(items: .constant(imgURLs)) { url, _ in
+                HTPagedCollectionView(items: .constant(imgURLs)) { url in
                     KFImage(URL(string: url),
                             options: [
                                 .processor(
@@ -68,6 +68,8 @@ struct HTCarouselView: View {
                         .background(Color.white)
                         .cornerRadius(10)
                         .shadow(radius: 4)
+                } willDisplay: { _ in
+                    
                 }
             }
         }
@@ -85,7 +87,8 @@ struct HTImageLostView: View {
                 .padding()
             
             HStack {
-                Image(systemName: "exclamationmark.triangle")
+                Image(systemName: "exclamationmark.triangle.fill")
+                    .foregroundColor(.yellow)
                     .font(.largeTitle)
                 Text("没能找到相关图片")
             }

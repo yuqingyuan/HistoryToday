@@ -12,13 +12,15 @@ struct HTPagedCollectionView<T: Any, Content: View>: UIViewRepresentable where T
     
     @Binding var items: [T]
     var direction: UICollectionView.ScrollDirection
-    var content: (T, Int) -> Content
+    var content: (T) -> Content
+    let willDisplay: ((Int) -> Void)
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init())
     
-    init(items: Binding<[T]>, direction: UICollectionView.ScrollDirection = .horizontal, content: @escaping (T, Int) -> Content) {
+    init(items: Binding<[T]>, direction: UICollectionView.ScrollDirection = .horizontal, content: @escaping (T) -> Content, willDisplay: @escaping (Int) -> Void) {
         _items = items
         self.direction = direction
         self.content = content
+        self.willDisplay = willDisplay
     }
     
     func makeUIView(context: Context) -> UICollectionView {
@@ -49,7 +51,7 @@ struct HTPagedCollectionView<T: Any, Content: View>: UIViewRepresentable where T
     }
     
     func makeCoordinator() -> Coordinator {
-        Coordinator(items, content: self.content)
+        Coordinator(items, content: self.content, willDisplay: self.willDisplay)
     }
     
     class HostingCell: UICollectionViewCell {
@@ -59,11 +61,13 @@ struct HTPagedCollectionView<T: Any, Content: View>: UIViewRepresentable where T
     class Coordinator: NSObject, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         
         var items: [T]
-        let content: (T, Int) -> Content
+        let content: (T) -> Content
+        let willDisplay: (Int) -> Void
 
-        init(_ items: [T], @ViewBuilder content: @escaping (T, Int) -> Content) {
+        init(_ items: [T], @ViewBuilder content: @escaping (T) -> Content, willDisplay: @escaping (Int) -> Void) {
             self.items = items
             self.content = content
+            self.willDisplay = willDisplay
         }
         
         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -73,7 +77,7 @@ struct HTPagedCollectionView<T: Any, Content: View>: UIViewRepresentable where T
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HostingCell", for: indexPath) as! HostingCell
             let item = self.items[indexPath.row]
-            let view = self.content(item, indexPath.row)
+            let view = self.content(item)
             if cell.host == nil {
                 cell.host = UIHostingController(rootView: AnyView(view))
             } else {
@@ -97,7 +101,10 @@ struct HTPagedCollectionView<T: Any, Content: View>: UIViewRepresentable where T
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
             return collectionView.frame.size
         }
-        
+            
+        func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+            self.willDisplay(indexPath.row)
+        }
     }
     
 }
