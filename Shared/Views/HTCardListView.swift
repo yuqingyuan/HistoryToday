@@ -14,7 +14,7 @@ struct HTCardListView: View {
     
     var body: some View {
         VStack {
-            HTCardListHeaderView(date: "\(eventVM.month)月\(eventVM.day)日 ")
+            HTCardListHeaderView(eventVM: .constant(eventVM))
                 .padding([.leading, .trailing])
             
             HTPagedCollectionView(items: $eventVM.events, direction: .vertical) { event in
@@ -31,22 +31,28 @@ struct HTCardListView: View {
 
 struct HTCardListHeaderView: View {
     
-    var date: String
+    @Binding var eventVM: HTEventViewModel
     
     var body: some View {
         HStack {
-            Button(action: {
+            HStack(spacing: 10) {
+                Button(action: {
+                    
+                }, label: {
+                    Image(systemName: "books.vertical")
+                        .font(Font.system(.title).weight(.light))
+                })
                 
-            }, label: {
-                Image(systemName: "books.vertical")
-                    .font(Font.system(.title).weight(.light))
-            })
+                if eventVM.isLoading {
+                    ProgressView()
+                }
+            }
             .padding([.top])
             
             Spacer()
             
             VStack(alignment: .trailing) {
-                Text(date)
+                Text("\(eventVM.month)月\(eventVM.day)日 ")
                     .font(.custom(commonFontName, size: 20))
                 Text("历史上的今天")
                     .font(.custom(commonFontName, size: 30))
@@ -58,7 +64,7 @@ struct HTCardListHeaderView: View {
 #if DEBUG
 struct HTCardListView_Previews: PreviewProvider {
     static var previews: some View {
-        HTCardListView(eventVM: preview_eventVM)
+        HTCardListView(eventVM: HTEventViewModel())
     }
 }
 #endif

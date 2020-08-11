@@ -13,7 +13,7 @@ class HTEventViewModel: ObservableObject {
     
     @Published var events = [HTEvent]()
     @Published var hasMore: Bool = true
-    var isLoading: Bool = false
+    @Published var isLoading: Bool = false
     var month: Int
     var day: Int
     
@@ -46,11 +46,3 @@ class HTEventViewModel: ObservableObject {
         .store(in: &cancellable)
     }
 }
-
-#if DEBUG
-var preview_eventVM: HTEventViewModel {
-    let viewmodel = HTEventViewModel()
-    viewmodel.events.append(contentsOf: Array(repeating: preview_event, count: 10))
-    return viewmodel
-}
-#endif
