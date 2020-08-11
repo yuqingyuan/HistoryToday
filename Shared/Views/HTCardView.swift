@@ -51,20 +51,43 @@ struct HTCarouselView: View {
     
     var body: some View {
         GeometryReader { geo in
-            HTPagedCollectionView(items: .constant(imgURLs)) { url, _ in
-                KFImage(URL(string: url),
-                        options: [
-                            .processor(
-                                DownsamplingImageProcessor(size: CGSize(width: geo.size.width - 40,
-                                                                        height: geo.size.height - 40))
-                            )
-                        ])
-                    .cancelOnDisappear(true)
-                    .resizable()
-                    .frame(width: geo.size.width - 40, height: geo.size.height - 40)
-                    .background(Color.white)
-                    .cornerRadius(10)
-                    .shadow(radius: 4)
+            if imgURLs.count == 0 {
+                HTImageLostView()
+            } else {
+                HTPagedCollectionView(items: .constant(imgURLs)) { url, _ in
+                    KFImage(URL(string: url),
+                            options: [
+                                .processor(
+                                    DownsamplingImageProcessor(size: CGSize(width: geo.size.width - 40,
+                                                                            height: geo.size.height - 40))
+                                )
+                            ])
+                        .cancelOnDisappear(true)
+                        .resizable()
+                        .frame(width: geo.size.width - 40, height: geo.size.height - 40)
+                        .background(Color.white)
+                        .cornerRadius(10)
+                        .shadow(radius: 4)
+                }
+            }
+        }
+    }
+}
+
+struct HTImageLostView: View {
+    
+    var body: some View {
+        ZStack {
+            Rectangle()
+                .foregroundColor(.white)
+                .cornerRadius(10)
+                .shadow(radius: 4)
+                .padding()
+            
+            HStack {
+                Image(systemName: "exclamationmark.triangle")
+                    .font(.largeTitle)
+                Text("没能找到相关图片")
             }
         }
     }
