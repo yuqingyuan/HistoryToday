@@ -16,23 +16,31 @@ class HTEventViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     var month: Int
     var day: Int
+    var type: EventType {
+        didSet {
+            self.hasMore = true
+            self.events = [HTEvent]()
+            self.loadMoreData()
+        }
+    }
     
     private var cancellable = Set<AnyCancellable>()
     
-    init(_ month: Int = Date().month!, _ day: Int = Date().day!) {
+    init(_ month: Int = Date().month!, _ day: Int = Date().day!, type: EventType) {
         self.month = month
         self.day = day
+        self.type = type
         loadMoreData()
     }
     
-    func loadMoreData(_ item: HTEvent? = nil) {
+    func loadMoreData() {
         if !hasMore || isLoading {
             return
         }
         
         isLoading = true
         
-        let param = EventReqParam(month: month, day: day, pageIndex: events.count, pageSize: 10, type: .all)
+        let param = EventReqParam(month: month, day: day, pageIndex: events.count, pageSize: 10, type: self.type)
         HTEventReqService.fetchEvents(param).sink { _ in
             
         } receiveValue: {

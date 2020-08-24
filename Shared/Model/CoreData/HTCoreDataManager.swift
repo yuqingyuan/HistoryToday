@@ -79,10 +79,7 @@ extension HTCoreDataManager {
         fetchReq.sortDescriptors = [.init(key: "id", ascending: true)]
         fetchReq.fetchOffset = param.pageIndex
         fetchReq.fetchLimit = param.pageSize
-        var predicate = "date = '\(param.month)-\(param.day)'"
-        if param.type != .all {
-            predicate += "and type = '\(param.type.rawValue)'"
-        }
+        let predicate = "date = '\(param.month)-\(param.day)' and type = '\(param.type.rawValue)'"
         fetchReq.predicate = NSPredicate(format: predicate)
         let publisher = CurrentValueSubject<[HTEvent], Error>([])
         do {

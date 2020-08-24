@@ -19,3 +19,11 @@ struct HTApp: App {
         }
     }
 }
+
+struct HTApp_Previews: PreviewProvider {
+    static var previews: some View {
+        #if !os(macOS)
+        HTMainView()
+        #endif
+    }
+}

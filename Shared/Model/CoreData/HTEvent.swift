@@ -29,23 +29,6 @@ public final class HTEvent: HTEventManagedObject, Identifiable {
     @NSManaged public private(set) var links: Dictionary<String, String>?
     @NSManaged public private(set) var imgs: [String]
     
-    public var displayYear: String {
-        var temp = year
-        if year.hasPrefix("-") {
-            temp = "公元前" + temp.replacingOccurrences(of: "-", with: "")
-        }
-        return temp
-    }
-    
-    public var displayType: String {
-        if type == 1 {
-            return "年，出生"
-        } else if type == 2 {
-            return "年，逝世"
-        }
-        return "年"
-    }
-    
     public convenience init(_ entity: NSEntityDescription, json: JSON, date: String, context: NSManagedObjectContext) {
         self.init(entity: entity, insertInto: context)
         
@@ -62,6 +45,26 @@ public final class HTEvent: HTEventManagedObject, Identifiable {
            let linkDict = JSON(data).dictionaryObject as? Dictionary<String, String> {
             links = linkDict
         }
+    }
+}
+
+extension HTEvent {
+    
+    public var displayYear: String {
+        var temp = year
+        if year.hasPrefix("-") {
+            temp = "公元前" + temp.replacingOccurrences(of: "-", with: "")
+        }
+        return temp
+    }
+    
+    public var displayType: String {
+        if type == 1 {
+            return "年，出生"
+        } else if type == 2 {
+            return "年，逝世"
+        }
+        return "年"
     }
 }
 

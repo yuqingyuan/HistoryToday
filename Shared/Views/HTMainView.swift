@@ -10,6 +10,7 @@ import SwiftUI
 struct HTMainView: View {
     var body: some View {
         HTCardListView()
+            .ignoresSafeArea(.all, edges: [.bottom])
     }
 }
 

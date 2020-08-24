@@ -17,6 +17,7 @@ struct HTHyperLinkText: UIViewRepresentable {
     func makeUIView(context: Context) -> UITextView {
         let textView = UITextView()
         textView.textAlignment = .left
+        textView.backgroundColor = .clear
         textView.hyperLinks(original: text, hypers: configuration)
         textView.sizeToFit()
         textView.isEditable = false

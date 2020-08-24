@@ -48,20 +48,25 @@ struct HTCardView: View {
 struct HTCarouselView: View {
     
     let imgURLs: [String]
+    @State var progress: CGFloat = 0.0
     
     var body: some View {
         GeometryReader { geo in
             if imgURLs.count == 0 {
                 HTImageLostView()
             } else {
-                HTPagedCollectionView(items: .constant(imgURLs)) { url in
-                    KFImage(URL(string: url),
+                HTPagedCollectionView(items: .constant(imgURLs)) {
+                    KFImage(URL(string: $0),
                             options: [
                                 .processor(
-                                    DownsamplingImageProcessor(size: CGSize(width: geo.size.width - 40,
-                                                                            height: geo.size.height - 40))
+                                    DownsamplingImageProcessor(size: .init(width: geo.size.width - 40, height: geo.size.height - 40))
                                 )
                             ])
+                        .placeholder {
+                            HTImageLoadingView(progress: $progress)
+                                .frame(width: 40, height: 40)
+                        }
+                        .onProgress { progress = CGFloat($0)/CGFloat($1) }
                         .cancelOnDisappear(true)
                         .resizable()
                         .frame(width: geo.size.width - 40, height: geo.size.height - 40)
@@ -71,26 +76,6 @@ struct HTCarouselView: View {
                 } willDisplay: { _ in
                     
                 }
-            }
-        }
-    }
-}
-
-struct HTImageLostView: View {
-    
-    var body: some View {
-        ZStack {
-            Rectangle()
-                .foregroundColor(.white)
-                .cornerRadius(10)
-                .shadow(radius: 4)
-                .padding()
-            
-            HStack {
-                Image(systemName: "exclamationmark.triangle.fill")
-                    .foregroundColor(.yellow)
-                    .font(.largeTitle)
-                Text("没能找到相关图片")
             }
         }
     }

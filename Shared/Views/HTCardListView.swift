@@ -10,15 +10,19 @@ import SwiftUI
 
 struct HTCardListView: View {
 
-    @ObservedObject var eventVM = HTEventViewModel()
+    @ObservedObject var eventVM = HTEventViewModel(type: .normal)
     
     var body: some View {
-        VStack {
-            HTCardListHeaderView(eventVM: .constant(eventVM))
-                .padding([.leading, .trailing])
+        VStack(spacing: 0) {
+            VStack {
+                HTCardListHeaderView(eventVM: .constant(eventVM))
+
+                Divider()
+            }
+            .padding([.leading, .trailing])
             
-            HTPagedCollectionView(items: $eventVM.events, direction: .vertical) { event in
-                HTCardView(event: event)
+            HTPagedCollectionView(items: $eventVM.events, direction: .vertical) {
+                HTCardView(event: $0)
             } willDisplay: { index in
                 if index == eventVM.events.count - 1 {
                     eventVM.loadMoreData()
@@ -36,16 +40,38 @@ struct HTCardListHeaderView: View {
     var body: some View {
         HStack {
             HStack(spacing: 10) {
-                Button(action: {
-                    
-                }, label: {
+                Menu {
+                    Button {
+                        eventVM.type = .normal
+                    } label: {
+                        Text("历史")
+                        Image(systemName: "text.book.closed")
+                    }
+                    Button {
+                        eventVM.type = .birth
+                    } label: {
+                        Text("出生")
+                        Image(systemName: "sunrise")
+                    }
+                    Button {
+                        eventVM.type = .death
+                    } label: {
+                        Text("逝世")
+                        Image(systemName: "sunset")
+                    }
+                } label: {
                     Image(systemName: "books.vertical")
                         .font(Font.system(.title).weight(.light))
-                })
+                }
                 
                 if eventVM.isLoading {
                     ProgressView()
                 }
+                
+                #if DEBUG
+                    HTFPSLabel()
+                        .frame(width: 55, height: 20)
+                #endif
             }
             .padding([.top])
             
@@ -64,7 +90,7 @@ struct HTCardListHeaderView: View {
 #if DEBUG
 struct HTCardListView_Previews: PreviewProvider {
     static var previews: some View {
-        HTCardListView(eventVM: HTEventViewModel())
+        HTCardListView(eventVM: HTEventViewModel(type: .normal))
     }
 }
 #endif

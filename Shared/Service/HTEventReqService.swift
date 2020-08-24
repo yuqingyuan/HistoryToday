@@ -11,8 +11,7 @@ import SwiftyJSON
 import Combine
 
 enum EventType: Int {
-    case all = -1
-    case normal, birth, death
+    case normal = 0, birth, death
 }
 
 struct EventReqParam {

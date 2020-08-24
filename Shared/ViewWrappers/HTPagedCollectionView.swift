@@ -30,7 +30,7 @@ struct HTPagedCollectionView<T: Any, Content: View>: UIViewRepresentable where T
         layout.scrollDirection = self.direction
         
         collectionView.collectionViewLayout = layout
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .clear
         collectionView.isPagingEnabled = true
         collectionView.delegate = context.coordinator
         collectionView.dataSource = context.coordinator
@@ -86,6 +86,7 @@ struct HTPagedCollectionView<T: Any, Content: View>: UIViewRepresentable where T
             
             if let host = cell.host, let content = host.view {
                 content.translatesAutoresizingMaskIntoConstraints = false
+                content.backgroundColor = .clear
                 cell.contentView.addSubview(content)
                 NSLayoutConstraint.activate([
                     content.topAnchor.constraint(equalTo: cell.contentView.topAnchor),
