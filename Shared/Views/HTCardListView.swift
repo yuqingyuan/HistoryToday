@@ -21,14 +21,22 @@ struct HTCardListView: View {
             }
             .padding([.leading, .trailing])
             
-            HTPagedCollectionView(items: $eventVM.events, direction: .vertical) {
-                HTCardView(event: $0)
-            } willDisplay: { index in
-                if index == eventVM.events.count - 1 {
-                    eventVM.loadMoreData()
+            GeometryReader { geo in
+                ScrollView(showsIndicators: false) {
+                    LazyVStack {
+                        ForEach(eventVM.events) { event in
+                            HTCardView(event: event)
+                                .frame(width: geo.size.width, height: geo.size.height)
+                                .onAppear {
+                                    // 加载更多
+                                    if eventVM.events.isLastItem(event) {
+                                        eventVM.loadMoreData()
+                                    }
+                                }
+                        }
+                    }
                 }
             }
-            .ignoresSafeArea(.container, edges: [.bottom])
         }
     }
 }
@@ -91,6 +99,7 @@ struct HTCardListHeaderView: View {
 struct HTCardListView_Previews: PreviewProvider {
     static var previews: some View {
         HTCardListView(eventVM: HTEventViewModel(type: .normal))
+            .ignoresSafeArea(.all, edges: [.bottom])
     }
 }
 #endif

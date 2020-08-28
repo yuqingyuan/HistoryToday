@@ -38,6 +38,8 @@ struct HTCardView: View {
                 keyLink = HTEventKeywordLink(link: "https://baike.baidu.com/item/"+keyword)
             }
             .padding([.leading, .trailing])
+            
+            Spacer()
         }
         .sheet(item: $keyLink) {
             HTWKWebView(request: URLRequest(url: URL(string: $0.link.urlEncoded())!))
@@ -55,26 +57,29 @@ struct HTCarouselView: View {
             if imgURLs.count == 0 {
                 HTImageLostView()
             } else {
-                HTPagedCollectionView(items: .constant(imgURLs)) {
-                    KFImage(URL(string: $0),
-                            options: [
-                                .processor(
-                                    DownsamplingImageProcessor(size: .init(width: geo.size.width - 40, height: geo.size.height - 40))
-                                )
-                            ])
-                        .placeholder {
-                            HTImageLoadingView(progress: $progress)
-                                .frame(width: 40, height: 40)
+                ScrollView(.horizontal, showsIndicators: false) {
+                    LazyHStack(alignment: .center, spacing: 0) {
+                        ForEach(imgURLs, id: \.self) {
+                            KFImage(URL(string: $0),
+                                    options: [
+                                        .processor(
+                                            DownsamplingImageProcessor(size: .init(width: geo.size.width - 40, height: geo.size.height - 40))
+                                        )
+                                    ])
+                                .placeholder {
+                                    HTImageLoadingView(progress: $progress)
+                                        .frame(width: 40, height: 40)
+                                }
+                                .onProgress { progress = CGFloat($0)/CGFloat($1) }
+                                .cancelOnDisappear(true)
+                                .resizable()
+                                .frame(width: geo.size.width - 40, height: geo.size.height - 40)
+                                .background(Color.white)
+                                .cornerRadius(10)
+                                .shadow(radius: 4)
                         }
-                        .onProgress { progress = CGFloat($0)/CGFloat($1) }
-                        .cancelOnDisappear(true)
-                        .resizable()
-                        .frame(width: geo.size.width - 40, height: geo.size.height - 40)
-                        .background(Color.white)
-                        .cornerRadius(10)
-                        .shadow(radius: 4)
-                } willDisplay: { _ in
-                    
+                        .frame(width: screenWidth, alignment: .center)
+                    }
                 }
             }
         }

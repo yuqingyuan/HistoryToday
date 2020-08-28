@@ -9,6 +9,11 @@ import SwiftUI
 
 @main
 struct HTApp: App {
+    
+    init() {
+        UIScrollView.appearance().isPagingEnabled = true
+    }
+    
     var body: some Scene {
         WindowGroup {
             #if !os(macOS)

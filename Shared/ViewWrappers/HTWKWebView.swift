@@ -14,7 +14,9 @@ struct HTWKWebView: UIViewRepresentable {
     let request: URLRequest
         
     func makeUIView(context: Context) -> WKWebView  {
-        return WKWebView()
+        let wkView = WKWebView()
+        wkView.scrollView.isPagingEnabled = false
+        return wkView
     }
     
     func updateUIView(_ uiView: WKWebView, context: Context) {

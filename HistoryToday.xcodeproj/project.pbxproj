@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0505437424D42310001BEBFC /* HTPagedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0505437324D42310001BEBFC /* HTPagedTableView.swift */; };
 		0507EB6824E272E70000BFA0 /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0507EB6724E272E70000BFA0 /* KingfisherSwiftUI */; };
 		0507EB6924E273670000BFA0 /* HTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055BBF3724A1D861003DD601 /* HTApp.swift */; };
 		0507EB7024E273EE0000BFA0 /* watchOS WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 0507EB6F24E273EE0000BFA0 /* watchOS WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -37,7 +36,6 @@
 		05B7227124EAA8050091D9E9 /* HTStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B7227024EAA8050091D9E9 /* HTStatusView.swift */; };
 		05B8893424C072EF000ABA7C /* HTEventReqService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B8893324C072EF000ABA7C /* HTEventReqService.swift */; };
 		05DE071E24D93FAD00F45AE8 /* HTHyperLinkText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DE071D24D93FAD00F45AE8 /* HTHyperLinkText.swift */; };
-		05DE072024D97E5D00F45AE8 /* HTPagedCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DE071F24D97E5D00F45AE8 /* HTPagedCollectionView.swift */; };
 		05E1CF6324E050D900081C83 /* FZKaiTi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05E1CF6224E050D900081C83 /* FZKaiTi.ttf */; };
 		05EA09B524DD4D1F002CDB34 /* HTCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EA09B224DD4D1F002CDB34 /* HTCardView.swift */; };
 		05EA09B724DD4D1F002CDB34 /* HTCardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EA09B324DD4D1F002CDB34 /* HTCardListView.swift */; };
@@ -92,7 +90,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0505437324D42310001BEBFC /* HTPagedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTPagedTableView.swift; sourceTree = "<group>"; };
 		0507EB6C24E273EE0000BFA0 /* watchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = watchOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0507EB6F24E273EE0000BFA0 /* watchOS WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "watchOS WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0507EB7524E273EE0000BFA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -126,7 +123,6 @@
 		05B7227024EAA8050091D9E9 /* HTStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTStatusView.swift; sourceTree = "<group>"; };
 		05B8893324C072EF000ABA7C /* HTEventReqService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTEventReqService.swift; sourceTree = "<group>"; };
 		05DE071D24D93FAD00F45AE8 /* HTHyperLinkText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTHyperLinkText.swift; sourceTree = "<group>"; };
-		05DE071F24D97E5D00F45AE8 /* HTPagedCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTPagedCollectionView.swift; sourceTree = "<group>"; };
 		05E1CF6224E050D900081C83 /* FZKaiTi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FZKaiTi.ttf; sourceTree = "<group>"; };
 		05EA09B224DD4D1F002CDB34 /* HTCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTCardView.swift; sourceTree = "<group>"; };
 		05EA09B324DD4D1F002CDB34 /* HTCardListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTCardListView.swift; sourceTree = "<group>"; };
@@ -168,9 +164,7 @@
 		0505437224D422FE001BEBFC /* ViewWrappers */ = {
 			isa = PBXGroup;
 			children = (
-				0505437324D42310001BEBFC /* HTPagedTableView.swift */,
 				05DE071D24D93FAD00F45AE8 /* HTHyperLinkText.swift */,
-				05DE071F24D97E5D00F45AE8 /* HTPagedCollectionView.swift */,
 				05EA09BB24DD4E56002CDB34 /* HTWKWebView.swift */,
 			);
 			path = ViewWrappers;
@@ -570,11 +564,9 @@
 				05B8893424C072EF000ABA7C /* HTEventReqService.swift in Sources */,
 				05145FE324AB63D0006A0EFA /* HTEvent.swift in Sources */,
 				0509E2E324AC886C00B05842 /* HTDateTool.swift in Sources */,
-				0505437424D42310001BEBFC /* HTPagedTableView.swift in Sources */,
 				05DE071E24D93FAD00F45AE8 /* HTHyperLinkText.swift in Sources */,
 				05EA09B724DD4D1F002CDB34 /* HTCardListView.swift in Sources */,
 				055BBF6024A1D862003DD601 /* HTApp.swift in Sources */,
-				05DE072024D97E5D00F45AE8 /* HTPagedCollectionView.swift in Sources */,
 				05FC772224AD8FA900F68588 /* HTEventsModel.xcdatamodeld in Sources */,
 				05EA09BF24DD6AA5002CDB34 /* HTStringTool.swift in Sources */,
 				0509E2DA24AC6BE300B05842 /* HTCoreDataManager.swift in Sources */,
@@ -1024,8 +1016,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.14.0;
+				kind = exactVersion;
+				version = 5.14.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
