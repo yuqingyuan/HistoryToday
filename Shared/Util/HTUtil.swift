@@ -30,19 +30,6 @@ var screenHeight: CGFloat {
 }
 
 #if !os(macOS)
-var homeIndicatorHeight: CGFloat {
-    if let delegate = UIApplication.shared.delegate, let window = delegate.window {
-        return window?.safeAreaInsets.bottom ?? 0
-    }
-    return 0
-}
-
-var statusBarHeight: CGFloat {
-    UIApplication.shared.windows
-        .filter { $0.isKeyWindow }
-        .first?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
-}
-
 func fitWidth(_ width: CGFloat) -> CGFloat {
     return width*(screenWidth/375.0)
 }

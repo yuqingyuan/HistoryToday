@@ -17,7 +17,7 @@ struct HTEventKeywordLink: Identifiable {
 
 struct HTCardView: View {
     let event: HTEvent
-    @State var keyLink: HTEventKeywordLink?
+    @State var keyLink: HTEventKeywordLink? = nil
     
     var body: some View {
         VStack(spacing: 0) {
@@ -59,26 +59,37 @@ struct HTCarouselView: View {
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHStack(alignment: .center, spacing: 0) {
                         ForEach(imgURLs, id: \.self) {
-                            KFImage(URL(string: $0),
-                                    options: [
-                                        .processor(
-                                            DownsamplingImageProcessor(size: .init(width: geo.size.width - 40, height: geo.size.height - 40))
-                                        )
-                                    ])
-                                .placeholder {
-                                    ProgressView()
-                                }
-                                .cancelOnDisappear(true)
-                                .resizable()
+                            HTCardImageView(imgURL: $0)
                                 .frame(width: geo.size.width - 40, height: geo.size.height - 40)
-                                .background(Color.white)
-                                .cornerRadius(10)
-                                .shadow(radius: 4)
                         }
-                        .frame(width: screenWidth, alignment: .center)
+                        .frame(width: geo.size.width, alignment: .center)
                     }
                 }
             }
+        }
+    }
+}
+
+struct HTCardImageView: View {
+    
+    let imgURL: String
+    
+    var body: some View {
+        GeometryReader { geo in
+            KFImage(URL(string: imgURL),
+                    options: [
+                        .processor(
+                            DownsamplingImageProcessor(size: .init(width: geo.size.width, height: geo.size.height))
+                        )
+                    ])
+                .placeholder {
+                    ProgressView()
+                }
+                .cancelOnDisappear(true)
+                .resizable()
+                .background(Color.white)
+                .cornerRadius(10)
+                .shadow(radius: 4)
         }
     }
 }

@@ -18,11 +18,12 @@ struct HTImageLostView: View {
                 .shadow(radius: 4)
                 .padding()
             
-            HStack {
+            VStack(spacing: 6) {
                 Image(systemName: "exclamationmark.triangle.fill")
                     .foregroundColor(.yellow)
                     .font(.largeTitle)
                 Text("没能找到相关图片")
+                    .font(.subheadline)
             }
         }
     }
@@ -46,5 +47,11 @@ struct HTImageLoadingView: View {
                 .rotationEffect(Angle(degrees: 270.0))
                 .animation(.linear)
         }
+    }
+}
+
+struct HTStatusView_Previews: PreviewProvider {
+    static var previews: some View {
+        HTImageLostView()
     }
 }
