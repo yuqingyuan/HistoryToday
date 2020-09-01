@@ -10,10 +10,6 @@ import Foundation
 import SwiftyJSON
 import Combine
 
-enum EventType: Int {
-    case normal = 0, birth, death
-}
-
 struct EventReqParam {
     var month: Int
     var day: Int

@@ -50,7 +50,6 @@ struct HTCardView: View {
 struct HTCarouselView: View {
     
     let imgURLs: [String]
-    @State var progress: CGFloat = 0.0
     
     var body: some View {
         GeometryReader { geo in
@@ -67,10 +66,8 @@ struct HTCarouselView: View {
                                         )
                                     ])
                                 .placeholder {
-                                    HTImageLoadingView(progress: $progress)
-                                        .frame(width: 40, height: 40)
+                                    ProgressView()
                                 }
-                                .onProgress { progress = CGFloat($0)/CGFloat($1) }
                                 .cancelOnDisappear(true)
                                 .resizable()
                                 .frame(width: geo.size.width - 40, height: geo.size.height - 40)

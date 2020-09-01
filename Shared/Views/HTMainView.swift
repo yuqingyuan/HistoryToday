@@ -14,8 +14,10 @@ struct HTMainView: View {
     }
 }
 
+#if DEBUG
 struct HTMainView_Previews: PreviewProvider {
     static var previews: some View {
         HTMainView()
     }
 }
+#endif
