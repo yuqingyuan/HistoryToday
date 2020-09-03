@@ -32,7 +32,7 @@ struct HTEntryProvider: TimelineProvider {
             var entries = [HTSimpleEventEntry]()
             let curDate = Date()
             for offset in 0 ..< events.count {
-                let entryDate = curDate.addingTimeInterval(TimeInterval((offset+1)*15*60))
+                let entryDate = Calendar.current.date(byAdding: .minute, value: offset*5, to: curDate)!
                 var entry = HTSimpleEventEntry(date: entryDate, eventYear: events[offset].displayYear, imgURL: events[offset].imgs.first, detail: events[offset].detail)
                 entry.isPreview = context.isPreview
                 entries.append(entry)
