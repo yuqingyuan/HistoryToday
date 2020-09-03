@@ -24,9 +24,9 @@ struct HTCardView: View {
             
             HStack(spacing: 0) {
                 Text(event.displayYear)
-                    .font(.custom(commonFontName, size: 60))
+                    .font(.custom(ktFont, size: 60))
                 Text(event.displayType)
-                    .font(.custom(commonFontName, size: 30))
+                    .font(.custom(ktFont, size: 30))
                     .padding([.top])
                 Spacer()
             }

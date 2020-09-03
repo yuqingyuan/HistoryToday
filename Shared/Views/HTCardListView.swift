@@ -87,9 +87,9 @@ struct HTCardListHeaderView: View {
             
             VStack(alignment: .trailing) {
                 Text("\(eventVM.month)月\(eventVM.day)日 ")
-                    .font(.custom(commonFontName, size: 20))
+                    .font(.custom(ktFont, size: 20))
                 Text("历史上的今天")
-                    .font(.custom(commonFontName, size: 30))
+                    .font(.custom(ktFont, size: 30))
             }
         }
     }
