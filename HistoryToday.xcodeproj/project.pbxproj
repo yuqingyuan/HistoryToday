@@ -57,6 +57,8 @@
 		05A08F7E24FF94DC005CCF65 /* HTAppSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A08F7C24FF8F08005CCF65 /* HTAppSetting.swift */; };
 		05A08F8A25008DAB005CCF65 /* HTCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A08F8925008DAB005CCF65 /* HTCarouselView.swift */; };
 		05A08F8B25008E28005CCF65 /* HTCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A08F8925008DAB005CCF65 /* HTCarouselView.swift */; };
+		05A08F8D2500E49A005CCF65 /* HTEntryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A08F8C2500E49A005CCF65 /* HTEntryProvider.swift */; };
+		05A08F8E2500E4F5005CCF65 /* HTEntryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A08F8C2500E49A005CCF65 /* HTEntryProvider.swift */; };
 		05A247C924D8FFA800352541 /* HTEventTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 05A247C824D8FFA800352541 /* HTEventTest.json */; };
 		05A247CA24D8FFA800352541 /* HTEventTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 05A247C824D8FFA800352541 /* HTEventTest.json */; };
 		05AA3BAD24C82DDE00B71ED3 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 05AA3BAC24C82DDE00B71ED3 /* SwiftyJSON */; };
@@ -178,6 +180,7 @@
 		05A08F7924FF7A37005CCF65 /* HTWeakProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTWeakProxy.swift; sourceTree = "<group>"; };
 		05A08F7C24FF8F08005CCF65 /* HTAppSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTAppSetting.swift; sourceTree = "<group>"; };
 		05A08F8925008DAB005CCF65 /* HTCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTCarouselView.swift; sourceTree = "<group>"; };
+		05A08F8C2500E49A005CCF65 /* HTEntryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTEntryProvider.swift; sourceTree = "<group>"; };
 		05A247C824D8FFA800352541 /* HTEventTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HTEventTest.json; sourceTree = "<group>"; };
 		05B7226624EA6D410091D9E9 /* HTFPSLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTFPSLabel.swift; sourceTree = "<group>"; };
 		05B7227024EAA8050091D9E9 /* HTStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTStatusView.swift; sourceTree = "<group>"; };
@@ -290,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				05101A8D24FE296A009678F1 /* HTWidget.swift */,
+				05A08F8C2500E49A005CCF65 /* HTEntryProvider.swift */,
 				05101A8F24FE296B009678F1 /* Assets.xcassets */,
 				05101A9124FE296B009678F1 /* Info.plist */,
 			);
@@ -716,6 +720,7 @@
 				05101AA124FE2E4B009678F1 /* HTStringEx.swift in Sources */,
 				05101AA324FE2E51009678F1 /* HTUtil.swift in Sources */,
 				05101AA424FE2E53009678F1 /* HTEventReqService.swift in Sources */,
+				05A08F8E2500E4F5005CCF65 /* HTEntryProvider.swift in Sources */,
 				05101A9F24FE2E3B009678F1 /* HTEventsModel.xcdatamodeld in Sources */,
 				05101A9E24FE2E39009678F1 /* HTEventViewModel.swift in Sources */,
 				05101AA224FE2E4E009678F1 /* HTCollectionEx.swift in Sources */,
@@ -739,6 +744,7 @@
 				0526276024C5BAE900EFE562 /* HTEventViewModel.swift in Sources */,
 				05B7226724EA6D410091D9E9 /* HTFPSLabel.swift in Sources */,
 				05B8893424C072EF000ABA7C /* HTEventReqService.swift in Sources */,
+				05A08F8D2500E49A005CCF65 /* HTEntryProvider.swift in Sources */,
 				05A08F7E24FF94DC005CCF65 /* HTAppSetting.swift in Sources */,
 				05A08F7824FF4641005CCF65 /* HTHostPingTool.swift in Sources */,
 				05145FE324AB63D0006A0EFA /* HTEvent.swift in Sources */,
