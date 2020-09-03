@@ -29,10 +29,8 @@
 		05101A8E24FE296A009678F1 /* HTWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05101A8D24FE296A009678F1 /* HTWidget.swift */; };
 		05101A9024FE296B009678F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05101A8F24FE296B009678F1 /* Assets.xcassets */; };
 		05101A9524FE296B009678F1 /* widgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 05101A8724FE296A009678F1 /* widgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		05101A9924FE2DF5009678F1 /* HTCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EA09B224DD4D1F002CDB34 /* HTCardView.swift */; };
 		05101A9A24FE2E19009678F1 /* HTEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05145FE224AB63D0006A0EFA /* HTEvent.swift */; };
 		05101A9B24FE2E20009678F1 /* HTCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0509E2D924AC6BE300B05842 /* HTCoreDataManager.swift */; };
-		05101A9C24FE2E32009678F1 /* HTHyperLinkText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DE071D24D93FAD00F45AE8 /* HTHyperLinkText.swift */; };
 		05101A9D24FE2E34009678F1 /* HTWKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EA09BB24DD4E56002CDB34 /* HTWKWebView.swift */; };
 		05101A9E24FE2E39009678F1 /* HTEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526275F24C5BAE900EFE562 /* HTEventViewModel.swift */; };
 		05101A9F24FE2E3B009678F1 /* HTEventsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 05FC772024AD8FA900F68588 /* HTEventsModel.xcdatamodeld */; };
@@ -45,12 +43,20 @@
 		05101AA724FE2F3E009678F1 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 05101AA624FE2F3E009678F1 /* SwiftyJSON */; };
 		05101AA924FE2F4A009678F1 /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 05101AA824FE2F4A009678F1 /* KingfisherSwiftUI */; };
 		05101AAA24FE32C9009678F1 /* HTEventTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 05A247C824D8FFA800352541 /* HTEventTest.json */; };
+		05101AAB24FE490F009678F1 /* FZKaiTi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05E1CF6224E050D900081C83 /* FZKaiTi.ttf */; };
+		05101AAC24FE4911009678F1 /* FZKaiTi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05E1CF6224E050D900081C83 /* FZKaiTi.ttf */; };
 		05145FE324AB63D0006A0EFA /* HTEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05145FE224AB63D0006A0EFA /* HTEvent.swift */; };
 		0526276024C5BAE900EFE562 /* HTEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526275F24C5BAE900EFE562 /* HTEventViewModel.swift */; };
 		052E1BA624C9333500B55B5D /* HTUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052E1BA524C9333500B55B5D /* HTUtil.swift */; };
 		055BBF6024A1D862003DD601 /* HTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055BBF3724A1D861003DD601 /* HTApp.swift */; };
 		055BBF6424A1D862003DD601 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 055BBF3924A1D862003DD601 /* Assets.xcassets */; };
 		055BBF6524A1D862003DD601 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 055BBF3924A1D862003DD601 /* Assets.xcassets */; };
+		05A08F7624FF43F8005CCF65 /* SimplePing.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A08F7524FF43F8005CCF65 /* SimplePing.m */; };
+		05A08F7824FF4641005CCF65 /* HTHostPingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A08F7724FF4641005CCF65 /* HTHostPingTool.swift */; };
+		05A08F7A24FF7A37005CCF65 /* HTWeakProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A08F7924FF7A37005CCF65 /* HTWeakProxy.swift */; };
+		05A08F7E24FF94DC005CCF65 /* HTAppSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A08F7C24FF8F08005CCF65 /* HTAppSetting.swift */; };
+		05A08F8A25008DAB005CCF65 /* HTCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A08F8925008DAB005CCF65 /* HTCarouselView.swift */; };
+		05A08F8B25008E28005CCF65 /* HTCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A08F8925008DAB005CCF65 /* HTCarouselView.swift */; };
 		05A247C924D8FFA800352541 /* HTEventTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 05A247C824D8FFA800352541 /* HTEventTest.json */; };
 		05A247CA24D8FFA800352541 /* HTEventTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 05A247C824D8FFA800352541 /* HTEventTest.json */; };
 		05AA3BAD24C82DDE00B71ED3 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 05AA3BAC24C82DDE00B71ED3 /* SwiftyJSON */; };
@@ -165,6 +171,13 @@
 		055BBF4624A1D862003DD601 /* HistoryToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HistoryToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		055BBF4824A1D862003DD601 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		055BBF4924A1D862003DD601 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		05A08F7324FF43F8005CCF65 /* iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		05A08F7424FF43F8005CCF65 /* SimplePing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimplePing.h; sourceTree = "<group>"; };
+		05A08F7524FF43F8005CCF65 /* SimplePing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimplePing.m; sourceTree = "<group>"; };
+		05A08F7724FF4641005CCF65 /* HTHostPingTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTHostPingTool.swift; sourceTree = "<group>"; };
+		05A08F7924FF7A37005CCF65 /* HTWeakProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTWeakProxy.swift; sourceTree = "<group>"; };
+		05A08F7C24FF8F08005CCF65 /* HTAppSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTAppSetting.swift; sourceTree = "<group>"; };
+		05A08F8925008DAB005CCF65 /* HTCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTCarouselView.swift; sourceTree = "<group>"; };
 		05A247C824D8FFA800352541 /* HTEventTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HTEventTest.json; sourceTree = "<group>"; };
 		05B7226624EA6D410091D9E9 /* HTFPSLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTFPSLabel.swift; sourceTree = "<group>"; };
 		05B7227024EAA8050091D9E9 /* HTStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTStatusView.swift; sourceTree = "<group>"; };
@@ -298,6 +311,7 @@
 			children = (
 				05101A6C24FE1E6B009678F1 /* Extension */,
 				052E1BA524C9333500B55B5D /* HTUtil.swift */,
+				05A08F7924FF7A37005CCF65 /* HTWeakProxy.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -365,11 +379,30 @@
 		056932CA24AA136500A78E5D /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				05A08F7324FF43F8005CCF65 /* iOS-Bridging-Header.h */,
 				05A247C824D8FFA800352541 /* HTEventTest.json */,
 				055BBF3924A1D862003DD601 /* Assets.xcassets */,
 				05E1CF6224E050D900081C83 /* FZKaiTi.ttf */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		05A08F7224FF43AB005CCF65 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				05A08F7424FF43F8005CCF65 /* SimplePing.h */,
+				05A08F7524FF43F8005CCF65 /* SimplePing.m */,
+				05A08F7724FF4641005CCF65 /* HTHostPingTool.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		05A08F7B24FF8EF7005CCF65 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				05A08F7C24FF8F08005CCF65 /* HTAppSetting.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		05AA3BAB24C82DDE00B71ED3 /* Frameworks */ = {
@@ -384,6 +417,7 @@
 		05B7226524EA6D2A0091D9E9 /* Monitor */ = {
 			isa = PBXGroup;
 			children = (
+				05A08F7224FF43AB005CCF65 /* Network */,
 				05B7226624EA6D410091D9E9 /* HTFPSLabel.swift */,
 			);
 			path = Monitor;
@@ -400,9 +434,10 @@
 		05EA09B124DD4D1F002CDB34 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				05EA09B224DD4D1F002CDB34 /* HTCardView.swift */,
-				05EA09B324DD4D1F002CDB34 /* HTCardListView.swift */,
 				05EA09B424DD4D1F002CDB34 /* HTMainView.swift */,
+				05EA09B224DD4D1F002CDB34 /* HTCardView.swift */,
+				05A08F8925008DAB005CCF65 /* HTCarouselView.swift */,
+				05EA09B324DD4D1F002CDB34 /* HTCardListView.swift */,
 				05B7227024EAA8050091D9E9 /* HTStatusView.swift */,
 			);
 			name = Views;
@@ -412,6 +447,7 @@
 		05EFD80924DD46480089A1CF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				05A08F7B24FF8EF7005CCF65 /* Settings */,
 				05145F5624AB3A16006A0EFA /* CoreData */,
 				0526275F24C5BAE900EFE562 /* HTEventViewModel.swift */,
 			);
@@ -629,6 +665,7 @@
 			files = (
 				05101AAA24FE32C9009678F1 /* HTEventTest.json in Resources */,
 				05101A9024FE296B009678F1 /* Assets.xcassets in Resources */,
+				05101AAB24FE490F009678F1 /* FZKaiTi.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,6 +685,7 @@
 			files = (
 				05A247CA24D8FFA800352541 /* HTEventTest.json in Resources */,
 				055BBF6524A1D862003DD601 /* Assets.xcassets in Resources */,
+				05101AAC24FE4911009678F1 /* FZKaiTi.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -672,10 +710,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				05101A9B24FE2E20009678F1 /* HTCoreDataManager.swift in Sources */,
+				05A08F8B25008E28005CCF65 /* HTCarouselView.swift in Sources */,
 				05101A9D24FE2E34009678F1 /* HTWKWebView.swift in Sources */,
 				05101A9A24FE2E19009678F1 /* HTEvent.swift in Sources */,
 				05101AA124FE2E4B009678F1 /* HTStringEx.swift in Sources */,
-				05101A9924FE2DF5009678F1 /* HTCardView.swift in Sources */,
 				05101AA324FE2E51009678F1 /* HTUtil.swift in Sources */,
 				05101AA424FE2E53009678F1 /* HTEventReqService.swift in Sources */,
 				05101A9F24FE2E3B009678F1 /* HTEventsModel.xcdatamodeld in Sources */,
@@ -684,7 +722,6 @@
 				05101AA024FE2E49009678F1 /* HTDateEx.swift in Sources */,
 				05101A8E24FE296A009678F1 /* HTWidget.swift in Sources */,
 				05101AA524FE2E73009678F1 /* HTStatusView.swift in Sources */,
-				05101A9C24FE2E32009678F1 /* HTHyperLinkText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -695,11 +732,15 @@
 				05EA09B524DD4D1F002CDB34 /* HTCardView.swift in Sources */,
 				05EA09BC24DD4E56002CDB34 /* HTWKWebView.swift in Sources */,
 				05B7227124EAA8050091D9E9 /* HTStatusView.swift in Sources */,
+				05A08F7624FF43F8005CCF65 /* SimplePing.m in Sources */,
 				05EA09B924DD4D1F002CDB34 /* HTMainView.swift in Sources */,
 				052E1BA624C9333500B55B5D /* HTUtil.swift in Sources */,
+				05A08F8A25008DAB005CCF65 /* HTCarouselView.swift in Sources */,
 				0526276024C5BAE900EFE562 /* HTEventViewModel.swift in Sources */,
 				05B7226724EA6D410091D9E9 /* HTFPSLabel.swift in Sources */,
 				05B8893424C072EF000ABA7C /* HTEventReqService.swift in Sources */,
+				05A08F7E24FF94DC005CCF65 /* HTAppSetting.swift in Sources */,
+				05A08F7824FF4641005CCF65 /* HTHostPingTool.swift in Sources */,
 				05145FE324AB63D0006A0EFA /* HTEvent.swift in Sources */,
 				0509E2E324AC886C00B05842 /* HTDateEx.swift in Sources */,
 				05DE071E24D93FAD00F45AE8 /* HTHyperLinkText.swift in Sources */,
@@ -708,6 +749,7 @@
 				05FC772224AD8FA900F68588 /* HTEventsModel.xcdatamodeld in Sources */,
 				05EA09BF24DD6AA5002CDB34 /* HTStringEx.swift in Sources */,
 				05101A6B24FDFBBB009678F1 /* HTCollectionEx.swift in Sources */,
+				05A08F7A24FF7A37005CCF65 /* HTWeakProxy.swift in Sources */,
 				0509E2DA24AC6BE300B05842 /* HTCoreDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1049,7 +1091,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.qingyuanyu.HistoryToday;
 				PRODUCT_NAME = HistoryToday;
 				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Shared/Resource/iOS-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1075,7 +1117,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.qingyuanyu.HistoryToday;
 				PRODUCT_NAME = HistoryToday;
 				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Shared/Resource/iOS-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

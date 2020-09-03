@@ -7,8 +7,6 @@
 //
 
 import SwiftUI
-import KingfisherSwiftUI
-import struct Kingfisher.DownsamplingImageProcessor
 
 struct HTEventKeywordLink: Identifiable {
     var id: String { link }
@@ -34,62 +32,15 @@ struct HTCardView: View {
             }
             .padding([.leading])
             
-            HTHyperLinkText(text: event.detail, configuration: event.links) { _, keyword in
-                keyLink = HTEventKeywordLink(link: "https://baike.baidu.com/item/"+keyword)
+            HTHyperLinkText(text: event.detail, configuration: event.links) { link in
+                keyLink = HTEventKeywordLink(link: link)
             }
             .padding([.leading, .trailing])
             
             Spacer()
         }
         .sheet(item: $keyLink) {
-            HTWKWebView(request: URLRequest(url: URL(string: $0.link.urlEncoded())!))
-        }
-    }
-}
-
-struct HTCarouselView: View {
-    
-    let imgURLs: [String]
-    
-    var body: some View {
-        GeometryReader { geo in
-            if imgURLs.count == 0 {
-                HTImageLostView()
-            } else {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    LazyHStack(alignment: .center, spacing: 0) {
-                        ForEach(imgURLs, id: \.self) {
-                            HTCardImageView(imgURL: $0)
-                                .frame(width: geo.size.width - 40, height: geo.size.height - 40)
-                        }
-                        .frame(width: geo.size.width, alignment: .center)
-                    }
-                }
-            }
-        }
-    }
-}
-
-struct HTCardImageView: View {
-    
-    let imgURL: String
-    
-    var body: some View {
-        GeometryReader { geo in
-            KFImage(URL(string: imgURL),
-                    options: [
-                        .processor(
-                            DownsamplingImageProcessor(size: .init(width: geo.size.width, height: geo.size.height))
-                        )
-                    ])
-                .placeholder {
-                    ProgressView()
-                }
-                .cancelOnDisappear(true)
-                .resizable()
-                .background(Color.white)
-                .cornerRadius(10)
-                .shadow(radius: 4)
+            HTWKWebView(request: URLRequest(url: URL(string: $0.link)!))
         }
     }
 }

@@ -9,24 +9,6 @@
 import UIKit
 import SwiftUI
 
-class HTWeakProxy: NSObject {
-    
-    weak var target: NSObjectProtocol?
-    
-    init(target: NSObjectProtocol) {
-        self.target = target
-        super.init()
-    }
-    
-    override func responds(to aSelector: Selector!) -> Bool {
-        return (target?.responds(to: aSelector) ?? false) || super.responds(to: aSelector)
-    }
-
-    override func forwardingTarget(for aSelector: Selector!) -> Any? {
-        return target
-    }
-}
-
 fileprivate class FPSLabel: UILabel {
     
     static let shared = FPSLabel(frame: .init(x: screenWidth - 60, y: 88, width: 55, height: 20))

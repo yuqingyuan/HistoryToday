@@ -12,6 +12,7 @@ struct HTApp: App {
     
     init() {
         UIScrollView.appearance().isPagingEnabled = true
+        HTAppSetting.shared.loadSetting()
     }
     
     var body: some Scene {

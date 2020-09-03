@@ -12,7 +12,7 @@ struct HTHyperLinkText: UIViewRepresentable {
     
     let text: String
     let configuration: Dictionary<String, String>?
-    let onTap: (String, String) -> ()
+    let onTap: (String) -> ()
     
     func makeUIView(context: Context) -> UITextView {
         let textView = UITextView()
@@ -41,15 +41,21 @@ struct HTHyperLinkText: UIViewRepresentable {
     
     class Coordinator: NSObject, UITextViewDelegate {
         
-        let onTap: (String, String) -> ()
+        let onTap: (String) -> ()
         
-        init(_ onTap: @escaping (String, String) -> ()) {
+        init(_ onTap: @escaping (String) -> ()) {
             self.onTap = onTap
         }
         
         func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
             let range = Range(characterRange, in: textView.text)
-            self.onTap(URL.absoluteString, String(textView.text[range!]))
+            let link: String
+            if HTAppSetting.shared.source == .wiki {
+                link = "https://zh.wikipedia.org" + URL.absoluteString
+            } else {
+                link = "https://baike.baidu.com/item/" + String(textView.text[range!]).urlEncoded()
+            }
+            self.onTap(link)
             return false
         }
     }
@@ -66,7 +72,7 @@ extension UITextView {
             attributedText.addAttribute(.link, value: link, range: linkRange)
         }
         self.linkTextAttributes = [
-            .foregroundColor: UIColor.blue
+            .foregroundColor: UIColor(rgb(235,87,87))
         ]
         attributedText.addAttribute(.paragraphStyle, value: style, range: fullRange)
         attributedText.addAttribute(.font, value: UIFont(name: commonFontName, size: fitFont(18))!, range: fullRange)
