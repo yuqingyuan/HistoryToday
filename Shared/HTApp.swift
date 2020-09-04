@@ -11,25 +11,15 @@ import SwiftUI
 struct HTApp: App {
     
     init() {
+        #if !os(macOS)
         UIScrollView.appearance().isPagingEnabled = true
+        #endif
         HTAppSetting.shared.loadSetting()
     }
     
     var body: some Scene {
         WindowGroup {
-            #if !os(macOS)
             HTMainView()
-            #else
-            Text("Hello")
-            #endif
         }
-    }
-}
-
-struct HTApp_Previews: PreviewProvider {
-    static var previews: some View {
-        #if !os(macOS)
-        HTMainView()
-        #endif
     }
 }

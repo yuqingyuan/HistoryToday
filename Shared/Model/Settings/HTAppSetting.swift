@@ -20,7 +20,7 @@ class HTAppSetting {
     var source: HTKeywordSource = .baidu
     
     func loadSetting() {
-        pingTool = HTHostPingTool(host: HTKeywordSource.wiki.rawValue, timeout: 0.5) { [weak self] receive in
+        pingTool = HTHostPingTool(host: HTKeywordSource.wiki.rawValue, timeout: 1.5) { [weak self] receive in
             if receive {
                 self?.source = .wiki
             }

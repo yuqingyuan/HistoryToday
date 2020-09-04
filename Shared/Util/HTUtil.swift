@@ -44,7 +44,11 @@ func fitFont(_ font: CGFloat) -> CGFloat {
 }
 #endif
 
+#if !os(macOS)
 var ktFont = "FZKai-Z03S"
+#else
+var ktFont = "STKaiti"
+#endif
 
 func rgb(_ r: Double, _ g: Double, _ b: Double) -> Color {
     return Color(red: r/255.0, green: g/255.0, blue: b/255.0)

@@ -47,7 +47,9 @@ struct HTCardImageView: View {
                         )
                     ])
                 .placeholder {
+                    #if !os(macOS)
                     ProgressView()
+                    #endif
                 }
                 .cancelOnDisappear(true)
                 .resizable()

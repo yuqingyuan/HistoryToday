@@ -61,6 +61,21 @@
 		05A08F8E2500E4F5005CCF65 /* HTEntryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A08F8C2500E49A005CCF65 /* HTEntryProvider.swift */; };
 		05A247C924D8FFA800352541 /* HTEventTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 05A247C824D8FFA800352541 /* HTEventTest.json */; };
 		05A247CA24D8FFA800352541 /* HTEventTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 05A247C824D8FFA800352541 /* HTEventTest.json */; };
+		05A4CC7025011204008923FF /* SimplePing.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A08F7524FF43F8005CCF65 /* SimplePing.m */; };
+		05A4CC712501120A008923FF /* HTHostPingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A08F7724FF4641005CCF65 /* HTHostPingTool.swift */; };
+		05A4CC7225011214008923FF /* HTAppSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A08F7C24FF8F08005CCF65 /* HTAppSetting.swift */; };
+		05A4CC742501E46E008923FF /* HTMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EA09B424DD4D1F002CDB34 /* HTMainView.swift */; };
+		05A4CC762501E9A0008923FF /* HTCardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EA09B324DD4D1F002CDB34 /* HTCardListView.swift */; };
+		05A4CC772501E9AE008923FF /* HTEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05145FE224AB63D0006A0EFA /* HTEvent.swift */; };
+		05A4CC782501E9B3008923FF /* HTCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0509E2D924AC6BE300B05842 /* HTCoreDataManager.swift */; };
+		05A4CC792501E9B6008923FF /* HTEventsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 05FC772024AD8FA900F68588 /* HTEventsModel.xcdatamodeld */; };
+		05A4CC7A2501E9B9008923FF /* HTEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526275F24C5BAE900EFE562 /* HTEventViewModel.swift */; };
+		05A4CC7B2501E9C1008923FF /* HTUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052E1BA524C9333500B55B5D /* HTUtil.swift */; };
+		05A4CC7C2501E9C9008923FF /* HTEventReqService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B8893324C072EF000ABA7C /* HTEventReqService.swift */; };
+		05A4CC7D2501E9D5008923FF /* HTDateEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0509E2E224AC886C00B05842 /* HTDateEx.swift */; };
+		05A4CC7F25021EC9008923FF /* HTCollectionEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05101A6A24FDFBBB009678F1 /* HTCollectionEx.swift */; };
+		05A4CC8025022123008923FF /* HTCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A08F8925008DAB005CCF65 /* HTCarouselView.swift */; };
+		05A4CC812502212B008923FF /* HTStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B7227024EAA8050091D9E9 /* HTStatusView.swift */; };
 		05AA3BAD24C82DDE00B71ED3 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 05AA3BAC24C82DDE00B71ED3 /* SwiftyJSON */; };
 		05B7226724EA6D410091D9E9 /* HTFPSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B7226624EA6D410091D9E9 /* HTFPSLabel.swift */; };
 		05B7227124EAA8050091D9E9 /* HTStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B7227024EAA8050091D9E9 /* HTStatusView.swift */; };
@@ -764,7 +779,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05A4CC7225011214008923FF /* HTAppSetting.swift in Sources */,
+				05A4CC742501E46E008923FF /* HTMainView.swift in Sources */,
+				05A4CC772501E9AE008923FF /* HTEvent.swift in Sources */,
+				05A4CC7A2501E9B9008923FF /* HTEventViewModel.swift in Sources */,
+				05A4CC762501E9A0008923FF /* HTCardListView.swift in Sources */,
+				05A4CC782501E9B3008923FF /* HTCoreDataManager.swift in Sources */,
+				05A4CC7B2501E9C1008923FF /* HTUtil.swift in Sources */,
+				05A4CC712501120A008923FF /* HTHostPingTool.swift in Sources */,
+				05A4CC812502212B008923FF /* HTStatusView.swift in Sources */,
+				05A4CC792501E9B6008923FF /* HTEventsModel.xcdatamodeld in Sources */,
+				05A4CC7C2501E9C9008923FF /* HTEventReqService.swift in Sources */,
 				0507EB6924E273670000BFA0 /* HTApp.swift in Sources */,
+				05A4CC8025022123008923FF /* HTCarouselView.swift in Sources */,
+				05A4CC7F25021EC9008923FF /* HTCollectionEx.swift in Sources */,
+				05A4CC7D2501E9D5008923FF /* HTDateEx.swift in Sources */,
+				05A4CC7025011204008923FF /* SimplePing.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -924,6 +954,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6E5KV5Z7QF;
 				INFOPLIST_FILE = Widget/Info.plist;
@@ -936,6 +967,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -946,6 +979,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6E5KV5Z7QF;
 				INFOPLIST_FILE = Widget/Info.plist;
@@ -958,6 +992,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1147,11 +1183,11 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.16;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.qingyuanyu.HistoryToday;
 				PRODUCT_NAME = HistoryToday;
 				SDKROOT = macosx;
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Shared/Resource/iOS-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -1174,11 +1210,11 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.16;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.qingyuanyu.HistoryToday;
 				PRODUCT_NAME = HistoryToday;
 				SDKROOT = macosx;
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Shared/Resource/iOS-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

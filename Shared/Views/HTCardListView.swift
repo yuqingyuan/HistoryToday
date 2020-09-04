@@ -25,14 +25,24 @@ struct HTCardListView: View {
                 ScrollView(showsIndicators: false) {
                     LazyVStack {
                         ForEach(eventVM.events) { event in
+                            #if !os(macOS)
                             HTCardView(event: event)
                                 .frame(width: geo.size.width, height: geo.size.height)
                                 .onAppear {
-                                    // 加载更多
                                     if eventVM.events.isLastItem(event) {
                                         eventVM.loadMoreData()
                                     }
                                 }
+                            #else
+                            HTBriefEventView(event: .constant(event))
+                                .frame(height: 100)
+                                .padding()
+                                .onAppear {
+                                    if eventVM.events.isLastItem(event) {
+                                        eventVM.loadMoreData()
+                                    }
+                                }
+                            #endif
                         }
                     }
                 }
@@ -47,7 +57,7 @@ struct HTCardListHeaderView: View {
     
     var body: some View {
         HStack {
-            HStack(spacing: 10) {
+            VStack {
                 Menu {
                     Button {
                         eventVM.type = .normal
@@ -71,22 +81,21 @@ struct HTCardListHeaderView: View {
                     Image(systemName: "books.vertical")
                         .font(Font.system(.title).weight(.light))
                 }
-                
-                if eventVM.isLoading {
-                    ProgressView()
-                }
-                
-                #if DEBUG
-                    HTFPSLabel()
-                        .frame(width: 55, height: 20)
-                #endif
+                .fixedSize()
             }
             .padding([.top])
             
-            Spacer()
+            #if !os(macOS)
+            if eventVM.isLoading {
+                ProgressView()
+                    .padding([.top, .leading])
+            }
             
-            VStack(alignment: .trailing) {
-                Text("\(eventVM.month)月\(eventVM.day)日 ")
+            Spacer()
+            #endif
+            
+            VStack(alignment: .trailing, spacing: 4) {
+                Text("\(eventVM.month)月\(eventVM.day)日")
                     .font(.custom(ktFont, size: 20))
                 Text("历史上的今天")
                     .font(.custom(ktFont, size: 30))
@@ -94,6 +103,37 @@ struct HTCardListHeaderView: View {
         }
     }
 }
+
+#if os(macOS)
+struct HTBriefEventView: View {
+    
+    @Binding var event: HTEvent
+    
+    var body: some View {
+        HStack {
+            HTCardImageView(imgURL: event.imgs.first ?? "")
+                .frame(width: 100, height: 100)
+            
+            VStack(alignment: .leading, spacing: 10) {
+                HStack(spacing: 0) {
+                    Text(event.displayYear)
+                    Text(event.displayType)
+                }
+                
+                Text(event.detail)
+                
+                Spacer()
+            }
+            .font(.custom(ktFont, size: 16))
+            
+            Spacer()
+            
+            Image(systemName: "chevron.right")
+                .foregroundColor(.blue)
+        }
+    }
+}
+#endif
 
 #if DEBUG
 struct HTCardListView_Previews: PreviewProvider {
