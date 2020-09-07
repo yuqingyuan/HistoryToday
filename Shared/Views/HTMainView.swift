@@ -8,19 +8,39 @@
 import SwiftUI
 
 struct HTMainView: View {
+    
+    @StateObject var eventVM: HTEventViewModel
+    #if os(macOS)
+    @State private var selection: Set<EventType> = [.normal]
+    #endif
+    
     var body: some View {
         #if !os(macOS)
-        HTCardListView()
-            .ignoresSafeArea(.all, edges: [.bottom])
+        VStack(spacing: 0) {
+            VStack {
+                HTCardListHeader(eventVM: eventVM)
+                Divider()
+            }
+            .padding([.leading, .trailing])
+            
+            HTCardListView(eventVM: eventVM)
+                .ignoresSafeArea(.all, edges: [.bottom])
+        }
         #else
         NavigationView {
-            VStack {
-                HTCardListView()
-                    .padding([.top])
-                
-                Spacer()
+            List(selection: $selection) {
+                ForEach(EventType.allCases) { type in
+                    NavigationLink(destination: HTCardListView(eventVM: .init(type: type))) {
+                        Label(type.description.title, systemImage: type.description.img)
+                    }
+                    .tag(type)
+                }
             }
-            .fixedSize(horizontal: true, vertical: false)
+            .listStyle(SidebarListStyle())
+            
+            Text("")
+            
+            Text("")
         }
         .frame(minWidth: 800, maxWidth: .infinity, minHeight: 600, maxHeight: .infinity)
         #endif
@@ -30,7 +50,7 @@ struct HTMainView: View {
 #if DEBUG
 struct HTMainView_Previews: PreviewProvider {
     static var previews: some View {
-        HTMainView()
+        HTMainView(eventVM: .init(type: .normal))
     }
 }
 #endif

@@ -9,8 +9,24 @@
 import Foundation
 import Combine
 
-enum EventType: Int {
+enum EventType: Int, CaseIterable, Identifiable {
+    
     case normal = 0, birth, death
+    
+    var id: Int {
+        return self.rawValue
+    }
+    
+    var description: (title: String, img: String) {
+        switch self {
+        case .normal:
+            return ("历史", "text.book.closed")
+        case .birth:
+            return ("出生", "sunrise")
+        case .death:
+            return ("逝世", "sunset")
+        }
+    }
 }
 
 class HTEventViewModel: ObservableObject {

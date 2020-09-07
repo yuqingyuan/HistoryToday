@@ -19,7 +19,7 @@ struct HTApp: App {
     
     var body: some Scene {
         WindowGroup {
-            HTMainView()
+            HTMainView(eventVM: .init(type: .normal))
         }
     }
 }

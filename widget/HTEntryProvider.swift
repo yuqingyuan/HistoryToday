@@ -13,13 +13,13 @@ var cancellable = Set<AnyCancellable>()
 
 struct HTEntryProvider: TimelineProvider {
     func placeholder(in context: Context) -> HTSimpleEventEntry {
-        var entry = HTSimpleEventEntry(date: Date(), eventYear: String(Date().year!), imgURL: "", detail: "历史上的今天")
+        var entry = HTSimpleEventEntry(date: Date(), eventYear: String(Date().year!), detail: "历史上的今天")
         entry.isPreview = context.isPreview
         return entry
     }
 
     func getSnapshot(in context: Context, completion: @escaping (HTSimpleEventEntry) -> ()) {
-        var entry = HTSimpleEventEntry(date: Date(), eventYear: String(Date().year!), imgURL: "", detail: "历史上的今天")
+        var entry = HTSimpleEventEntry(date: Date(), eventYear: String(Date().year!), detail: "历史上的今天")
         entry.isPreview = context.isPreview
         completion(entry)
     }
@@ -33,7 +33,7 @@ struct HTEntryProvider: TimelineProvider {
             let curDate = Date()
             for offset in 0 ..< events.count {
                 let entryDate = Calendar.current.date(byAdding: .minute, value: offset*5, to: curDate)!
-                var entry = HTSimpleEventEntry(date: entryDate, eventYear: events[offset].displayYear, imgURL: events[offset].imgs.first, detail: events[offset].detail)
+                var entry = HTSimpleEventEntry(date: entryDate, eventYear: events[offset].displayYear, detail: events[offset].detail)
                 entry.isPreview = context.isPreview
                 entries.append(entry)
             }
@@ -46,7 +46,6 @@ struct HTEntryProvider: TimelineProvider {
 struct HTSimpleEventEntry: TimelineEntry {
     let date: Date
     let eventYear: String
-    let imgURL: String?
     let detail: String
     
     var isPreview: Bool = false
