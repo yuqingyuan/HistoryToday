@@ -16,17 +16,17 @@ struct HTCatalogueView: View {
         HStack {
             HTCardImageView(imgURL: event.imgs.first ?? "")
                 .frame(width: 100, height: 100)
+                .background(Color.clear)
 
             VStack(alignment: .leading, spacing: 10) {
-                HStack(spacing: 0) {
-                    Text(event.displayYear+"年")
-                }
+                Text(event.displayYear+"年")
+                    .font(.custom(ktFont, size: 18))
 
-                Text(event.detail)
+                Text(event.keywords)
+                    .font(.custom(ktFont, size: 16))
 
                 Spacer()
             }
-            .font(.custom(ktFont, size: 16))
 
             Spacer()
 
@@ -36,6 +36,7 @@ struct HTCatalogueView: View {
     }
 }
 
+#if DEBUG
 struct HTCatalogueList_Previews: PreviewProvider {
     static var previews: some View {
         HTCatalogueView(event: preview_event)
@@ -43,3 +44,4 @@ struct HTCatalogueList_Previews: PreviewProvider {
             .padding()
     }
 }
+#endif

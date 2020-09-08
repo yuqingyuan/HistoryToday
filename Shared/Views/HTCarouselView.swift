@@ -23,6 +23,7 @@ struct HTCarouselView: View {
                     LazyHStack(alignment: .center, spacing: 0) {
                         ForEach(imgURLs, id: \.self) {
                             HTCardImageView(imgURL: $0)
+                                .background(Color.white)
                                 .frame(width: geo.size.width - 40, height: geo.size.height - 40)
                                 .shadow(radius: 4)
                         }
@@ -53,7 +54,6 @@ struct HTCardImageView: View {
                 }
                 .cancelOnDisappear(true)
                 .resizable()
-                .background(Color.white)
                 .cornerRadius(10)
         }
     }

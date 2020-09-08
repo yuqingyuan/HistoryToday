@@ -32,18 +32,16 @@ struct HTCardListView: View {
         #else
         List {
             ForEach(eventVM.events) { event in
-                NavigationLink(
-                    destination: Text("Destination"),
-                    label: {
-                        HTCatalogueView(event: event)
-                            .frame(minWidth: 300, maxWidth: 300)
-                            .padding([.top, .bottom, .trailing])
-                            .onAppear {
-                                if eventVM.events.isLastItem(event) {
-                                    eventVM.loadMoreData()
-                                }
+                NavigationLink(destination: HTCardDetailView(event: event)) {
+                    HTCatalogueView(event: event)
+                        .frame(minWidth: 300, maxWidth: 300)
+                        .padding([.top, .bottom, .trailing])
+                        .onAppear {
+                            if eventVM.events.isLastItem(event) {
+                                eventVM.loadMoreData()
                             }
-                    })
+                        }
+                }
             }
         }
         #endif

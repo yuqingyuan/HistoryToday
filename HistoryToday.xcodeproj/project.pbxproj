@@ -51,6 +51,7 @@
 		055BBF6024A1D862003DD601 /* HTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055BBF3724A1D861003DD601 /* HTApp.swift */; };
 		055BBF6424A1D862003DD601 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 055BBF3924A1D862003DD601 /* Assets.xcassets */; };
 		055BBF6524A1D862003DD601 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 055BBF3924A1D862003DD601 /* Assets.xcassets */; };
+		055EBB4E2507A0C900866EC0 /* HTCardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055EBB4D2507A0C900866EC0 /* HTCardDetailView.swift */; };
 		05A08F7624FF43F8005CCF65 /* SimplePing.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A08F7524FF43F8005CCF65 /* SimplePing.m */; };
 		05A08F7824FF4641005CCF65 /* HTHostPingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A08F7724FF4641005CCF65 /* HTHostPingTool.swift */; };
 		05A08F7A24FF7A37005CCF65 /* HTWeakProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A08F7924FF7A37005CCF65 /* HTWeakProxy.swift */; };
@@ -191,6 +192,7 @@
 		055BBF4624A1D862003DD601 /* HistoryToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HistoryToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		055BBF4824A1D862003DD601 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		055BBF4924A1D862003DD601 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		055EBB4D2507A0C900866EC0 /* HTCardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTCardDetailView.swift; sourceTree = "<group>"; };
 		05A08F7324FF43F8005CCF65 /* iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		05A08F7424FF43F8005CCF65 /* SimplePing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimplePing.h; sourceTree = "<group>"; };
 		05A08F7524FF43F8005CCF65 /* SimplePing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimplePing.m; sourceTree = "<group>"; };
@@ -400,6 +402,15 @@
 			path = macOS;
 			sourceTree = "<group>";
 		};
+		055EBB4C2507A0AA00866EC0 /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+				05ED06CD250658060092BFB5 /* HTCatalogueView.swift */,
+				055EBB4D2507A0C900866EC0 /* HTCardDetailView.swift */,
+			);
+			path = Mac;
+			sourceTree = "<group>";
+		};
 		056932CA24AA136500A78E5D /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -458,13 +469,13 @@
 		05EA09B124DD4D1F002CDB34 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				055EBB4C2507A0AA00866EC0 /* Mac */,
 				05EA09B424DD4D1F002CDB34 /* HTMainView.swift */,
 				05EA09B324DD4D1F002CDB34 /* HTCardListView.swift */,
 				05ED06CA25064CA70092BFB5 /* HTCardListHeader.swift */,
 				05EA09B224DD4D1F002CDB34 /* HTCardView.swift */,
 				05A08F8925008DAB005CCF65 /* HTCarouselView.swift */,
 				05B7227024EAA8050091D9E9 /* HTStatusView.swift */,
-				05ED06CD250658060092BFB5 /* HTCatalogueView.swift */,
 			);
 			name = Views;
 			path = Shared/Views;
@@ -795,6 +806,7 @@
 				05A4CC782501E9B3008923FF /* HTCoreDataManager.swift in Sources */,
 				05A4CC7B2501E9C1008923FF /* HTUtil.swift in Sources */,
 				05A4CC712501120A008923FF /* HTHostPingTool.swift in Sources */,
+				055EBB4E2507A0C900866EC0 /* HTCardDetailView.swift in Sources */,
 				05A4CC812502212B008923FF /* HTStatusView.swift in Sources */,
 				05A4CC792501E9B6008923FF /* HTEventsModel.xcdatamodeld in Sources */,
 				05A4CC7C2501E9C9008923FF /* HTEventReqService.swift in Sources */,

@@ -66,6 +66,13 @@ extension HTEvent {
         }
         return "年"
     }
+    
+    public var keywords: String {
+        if let links = links {
+            return "关键词：" + links.keys.joined(separator: "，")
+        }
+        return "关键词：无"
+    }
 }
 
 #if DEBUG
