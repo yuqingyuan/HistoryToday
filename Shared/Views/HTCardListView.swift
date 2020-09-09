@@ -44,6 +44,7 @@ struct HTCardListView: View {
                 }
             }
         }
+        .navigationTitle(Text(eventVM.type.description.title))
         #endif
     }
 }

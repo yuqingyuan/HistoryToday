@@ -31,17 +31,10 @@
 		05101A9524FE296B009678F1 /* widgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 05101A8724FE296A009678F1 /* widgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		05101A9A24FE2E19009678F1 /* HTEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05145FE224AB63D0006A0EFA /* HTEvent.swift */; };
 		05101A9B24FE2E20009678F1 /* HTCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0509E2D924AC6BE300B05842 /* HTCoreDataManager.swift */; };
-		05101A9D24FE2E34009678F1 /* HTWKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EA09BB24DD4E56002CDB34 /* HTWKWebView.swift */; };
 		05101A9E24FE2E39009678F1 /* HTEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526275F24C5BAE900EFE562 /* HTEventViewModel.swift */; };
 		05101A9F24FE2E3B009678F1 /* HTEventsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 05FC772024AD8FA900F68588 /* HTEventsModel.xcdatamodeld */; };
-		05101AA024FE2E49009678F1 /* HTDateEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0509E2E224AC886C00B05842 /* HTDateEx.swift */; };
-		05101AA124FE2E4B009678F1 /* HTStringEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EA09BE24DD6AA5002CDB34 /* HTStringEx.swift */; };
-		05101AA224FE2E4E009678F1 /* HTCollectionEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05101A6A24FDFBBB009678F1 /* HTCollectionEx.swift */; };
 		05101AA324FE2E51009678F1 /* HTUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052E1BA524C9333500B55B5D /* HTUtil.swift */; };
 		05101AA424FE2E53009678F1 /* HTEventReqService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B8893324C072EF000ABA7C /* HTEventReqService.swift */; };
-		05101AA524FE2E73009678F1 /* HTStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B7227024EAA8050091D9E9 /* HTStatusView.swift */; };
-		05101AA724FE2F3E009678F1 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 05101AA624FE2F3E009678F1 /* SwiftyJSON */; };
-		05101AA924FE2F4A009678F1 /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 05101AA824FE2F4A009678F1 /* KingfisherSwiftUI */; };
 		05101AAA24FE32C9009678F1 /* HTEventTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 05A247C824D8FFA800352541 /* HTEventTest.json */; };
 		05101AAB24FE490F009678F1 /* FZKaiTi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05E1CF6224E050D900081C83 /* FZKaiTi.ttf */; };
 		05101AAC24FE4911009678F1 /* FZKaiTi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05E1CF6224E050D900081C83 /* FZKaiTi.ttf */; };
@@ -52,12 +45,28 @@
 		055BBF6424A1D862003DD601 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 055BBF3924A1D862003DD601 /* Assets.xcassets */; };
 		055BBF6524A1D862003DD601 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 055BBF3924A1D862003DD601 /* Assets.xcassets */; };
 		055EBB4E2507A0C900866EC0 /* HTCardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055EBB4D2507A0C900866EC0 /* HTCardDetailView.swift */; };
+		05800C6D2508F8F80029B5C9 /* HTDateEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0509E2E224AC886C00B05842 /* HTDateEx.swift */; };
+		05800C6F2508F9290029B5C9 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 05800C6E2508F9290029B5C9 /* SwiftyJSON */; };
+		05800C762508FA8B0029B5C9 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05101A8824FE296A009678F1 /* WidgetKit.framework */; };
+		05800C772508FA8B0029B5C9 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05101A8A24FE296A009678F1 /* SwiftUI.framework */; };
+		05800C7C2508FA8C0029B5C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05800C7B2508FA8C0029B5C9 /* Assets.xcassets */; };
+		05800C812508FA8C0029B5C9 /* widgetMacOSExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 05800C752508FA8B0029B5C9 /* widgetMacOSExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		05800C862508FAB60029B5C9 /* HTEntryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A08F8C2500E49A005CCF65 /* HTEntryProvider.swift */; };
+		05800C872508FAE70029B5C9 /* HTCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0509E2D924AC6BE300B05842 /* HTCoreDataManager.swift */; };
+		05800C882508FAEB0029B5C9 /* HTEventsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 05FC772024AD8FA900F68588 /* HTEventsModel.xcdatamodeld */; };
+		05800C892508FAF00029B5C9 /* HTEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05145FE224AB63D0006A0EFA /* HTEvent.swift */; };
+		05800C8A2508FAF40029B5C9 /* HTUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052E1BA524C9333500B55B5D /* HTUtil.swift */; };
+		05800C8B2508FAF70029B5C9 /* HTEventReqService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B8893324C072EF000ABA7C /* HTEventReqService.swift */; };
+		05800C8C2508FB020029B5C9 /* HTDateEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0509E2E224AC886C00B05842 /* HTDateEx.swift */; };
+		05800C8D2508FB070029B5C9 /* HTEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526275F24C5BAE900EFE562 /* HTEventViewModel.swift */; };
+		05800C8F2508FB100029B5C9 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 05800C8E2508FB100029B5C9 /* SwiftyJSON */; };
+		05800C912508FB100029B5C9 /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 05800C902508FB100029B5C9 /* KingfisherSwiftUI */; };
+		05800C932508FD020029B5C9 /* HTWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05101A8D24FE296A009678F1 /* HTWidget.swift */; };
 		05A08F7624FF43F8005CCF65 /* SimplePing.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A08F7524FF43F8005CCF65 /* SimplePing.m */; };
 		05A08F7824FF4641005CCF65 /* HTHostPingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A08F7724FF4641005CCF65 /* HTHostPingTool.swift */; };
 		05A08F7A24FF7A37005CCF65 /* HTWeakProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A08F7924FF7A37005CCF65 /* HTWeakProxy.swift */; };
 		05A08F7E24FF94DC005CCF65 /* HTAppSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A08F7C24FF8F08005CCF65 /* HTAppSetting.swift */; };
 		05A08F8A25008DAB005CCF65 /* HTCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A08F8925008DAB005CCF65 /* HTCarouselView.swift */; };
-		05A08F8B25008E28005CCF65 /* HTCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A08F8925008DAB005CCF65 /* HTCarouselView.swift */; };
 		05A08F8D2500E49A005CCF65 /* HTEntryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A08F8C2500E49A005CCF65 /* HTEntryProvider.swift */; };
 		05A08F8E2500E4F5005CCF65 /* HTEntryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A08F8C2500E49A005CCF65 /* HTEntryProvider.swift */; };
 		05A247C924D8FFA800352541 /* HTEventTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 05A247C824D8FFA800352541 /* HTEventTest.json */; };
@@ -88,7 +97,6 @@
 		05EA09BC24DD4E56002CDB34 /* HTWKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EA09BB24DD4E56002CDB34 /* HTWKWebView.swift */; };
 		05EA09BF24DD6AA5002CDB34 /* HTStringEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EA09BE24DD6AA5002CDB34 /* HTStringEx.swift */; };
 		05ED06CB25064CA70092BFB5 /* HTCardListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED06CA25064CA70092BFB5 /* HTCardListHeader.swift */; };
-		05ED06CC25064CA70092BFB5 /* HTCardListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED06CA25064CA70092BFB5 /* HTCardListHeader.swift */; };
 		05ED06D0250658880092BFB5 /* HTCatalogueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED06CD250658060092BFB5 /* HTCatalogueView.swift */; };
 		05ED06D1250659BE0092BFB5 /* HTCardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EA09B324DD4D1F002CDB34 /* HTCardListView.swift */; };
 		05FC772224AD8FA900F68588 /* HTEventsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 05FC772024AD8FA900F68588 /* HTEventsModel.xcdatamodeld */; };
@@ -117,6 +125,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 05101A8624FE296A009678F1;
 			remoteInfo = WidgetExtension;
+		};
+		05800C7F2508FA8C0029B5C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 055BBF3224A1D861003DD601 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05800C742508FA8B0029B5C9;
+			remoteInfo = widgetMacOSExtension;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -150,6 +165,17 @@
 			dstSubfolderSpec = 13;
 			files = (
 				05101A9524FE296B009678F1 /* widgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05800C852508FA8C0029B5C9 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				05800C812508FA8C0029B5C9 /* widgetMacOSExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,6 +219,10 @@
 		055BBF4824A1D862003DD601 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		055BBF4924A1D862003DD601 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		055EBB4D2507A0C900866EC0 /* HTCardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTCardDetailView.swift; sourceTree = "<group>"; };
+		05800C752508FA8B0029B5C9 /* widgetMacOSExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = widgetMacOSExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		05800C7B2508FA8C0029B5C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		05800C7D2508FA8C0029B5C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05800C7E2508FA8C0029B5C9 /* widgetMacOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = widgetMacOS.entitlements; sourceTree = "<group>"; };
 		05A08F7324FF43F8005CCF65 /* iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		05A08F7424FF43F8005CCF65 /* SimplePing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimplePing.h; sourceTree = "<group>"; };
 		05A08F7524FF43F8005CCF65 /* SimplePing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimplePing.m; sourceTree = "<group>"; };
@@ -229,9 +259,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05101AA724FE2F3E009678F1 /* SwiftyJSON in Frameworks */,
+				05800C6F2508F9290029B5C9 /* SwiftyJSON in Frameworks */,
 				05101A8B24FE296A009678F1 /* SwiftUI.framework in Frameworks */,
-				05101AA924FE2F4A009678F1 /* KingfisherSwiftUI in Frameworks */,
 				05101A8924FE296A009678F1 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,6 +280,17 @@
 			files = (
 				0507EB6824E272E70000BFA0 /* KingfisherSwiftUI in Frameworks */,
 				05AA3BAD24C82DDE00B71ED3 /* SwiftyJSON in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05800C722508FA8B0029B5C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05800C8F2508FB100029B5C9 /* SwiftyJSON in Frameworks */,
+				05800C772508FA8B0029B5C9 /* SwiftUI.framework in Frameworks */,
+				05800C912508FB100029B5C9 /* KingfisherSwiftUI in Frameworks */,
+				05800C762508FA8B0029B5C9 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +391,7 @@
 				0507EB7324E273EE0000BFA0 /* watchOS WatchKit App */,
 				0507EB8224E273F00000BFA0 /* watchOS WatchKit Extension */,
 				05101A8C24FE296A009678F1 /* widget */,
+				05800C782508FA8B0029B5C9 /* widgetMacOS */,
 				055BBF3F24A1D862003DD601 /* Products */,
 				05AA3BAB24C82DDE00B71ED3 /* Frameworks */,
 			);
@@ -381,6 +422,7 @@
 				0507EB6F24E273EE0000BFA0 /* watchOS WatchKit App.app */,
 				0507EB7E24E273F00000BFA0 /* watchOS WatchKit Extension.appex */,
 				05101A8724FE296A009678F1 /* widgetExtension.appex */,
+				05800C752508FA8B0029B5C9 /* widgetMacOSExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -420,6 +462,16 @@
 				05E1CF6224E050D900081C83 /* FZKaiTi.ttf */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		05800C782508FA8B0029B5C9 /* widgetMacOS */ = {
+			isa = PBXGroup;
+			children = (
+				05800C7B2508FA8C0029B5C9 /* Assets.xcassets */,
+				05800C7D2508FA8C0029B5C9 /* Info.plist */,
+				05800C7E2508FA8C0029B5C9 /* widgetMacOS.entitlements */,
+			);
+			path = widgetMacOS;
 			sourceTree = "<group>";
 		};
 		05A08F7224FF43AB005CCF65 /* Network */ = {
@@ -559,8 +611,7 @@
 			);
 			name = widgetExtension;
 			packageProductDependencies = (
-				05101AA624FE2F3E009678F1 /* SwiftyJSON */,
-				05101AA824FE2F4A009678F1 /* KingfisherSwiftUI */,
+				05800C6E2508F9290029B5C9 /* SwiftyJSON */,
 			);
 			productName = WidgetExtension;
 			productReference = 05101A8724FE296A009678F1 /* widgetExtension.appex */;
@@ -596,10 +647,12 @@
 				055BBF4224A1D862003DD601 /* Sources */,
 				055BBF4324A1D862003DD601 /* Frameworks */,
 				055BBF4424A1D862003DD601 /* Resources */,
+				05800C852508FA8C0029B5C9 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				05800C802508FA8C0029B5C9 /* PBXTargetDependency */,
 			);
 			name = macOS;
 			packageProductDependencies = (
@@ -609,6 +662,27 @@
 			productName = macOS;
 			productReference = 055BBF4624A1D862003DD601 /* HistoryToday.app */;
 			productType = "com.apple.product-type.application";
+		};
+		05800C742508FA8B0029B5C9 /* widgetMacOSExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05800C822508FA8C0029B5C9 /* Build configuration list for PBXNativeTarget "widgetMacOSExtension" */;
+			buildPhases = (
+				05800C712508FA8B0029B5C9 /* Sources */,
+				05800C722508FA8B0029B5C9 /* Frameworks */,
+				05800C732508FA8B0029B5C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = widgetMacOSExtension;
+			packageProductDependencies = (
+				05800C8E2508FB100029B5C9 /* SwiftyJSON */,
+				05800C902508FB100029B5C9 /* KingfisherSwiftUI */,
+			);
+			productName = widgetMacOSExtension;
+			productReference = 05800C752508FA8B0029B5C9 /* widgetMacOSExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -641,6 +715,9 @@
 						CreatedOnToolsVersion = 12.0;
 						LastSwiftMigration = 1200;
 					};
+					05800C742508FA8B0029B5C9 = {
+						CreatedOnToolsVersion = 12.0;
+					};
 				};
 			};
 			buildConfigurationList = 055BBF3524A1D861003DD601 /* Build configuration list for PBXProject "HistoryToday" */;
@@ -666,6 +743,7 @@
 				0507EB6E24E273EE0000BFA0 /* watchOS WatchKit App */,
 				0507EB7D24E273F00000BFA0 /* watchOS WatchKit Extension */,
 				05101A8624FE296A009678F1 /* widgetExtension */,
+				05800C742508FA8B0029B5C9 /* widgetMacOSExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -726,6 +804,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		05800C732508FA8B0029B5C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05800C7C2508FA8C0029B5C9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -747,20 +833,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				05101A9B24FE2E20009678F1 /* HTCoreDataManager.swift in Sources */,
-				05A08F8B25008E28005CCF65 /* HTCarouselView.swift in Sources */,
-				05ED06CC25064CA70092BFB5 /* HTCardListHeader.swift in Sources */,
-				05101A9D24FE2E34009678F1 /* HTWKWebView.swift in Sources */,
 				05101A9A24FE2E19009678F1 /* HTEvent.swift in Sources */,
-				05101AA124FE2E4B009678F1 /* HTStringEx.swift in Sources */,
 				05101AA324FE2E51009678F1 /* HTUtil.swift in Sources */,
 				05101AA424FE2E53009678F1 /* HTEventReqService.swift in Sources */,
 				05A08F8E2500E4F5005CCF65 /* HTEntryProvider.swift in Sources */,
 				05101A9F24FE2E3B009678F1 /* HTEventsModel.xcdatamodeld in Sources */,
+				05800C6D2508F8F80029B5C9 /* HTDateEx.swift in Sources */,
 				05101A9E24FE2E39009678F1 /* HTEventViewModel.swift in Sources */,
-				05101AA224FE2E4E009678F1 /* HTCollectionEx.swift in Sources */,
-				05101AA024FE2E49009678F1 /* HTDateEx.swift in Sources */,
 				05101A8E24FE296A009678F1 /* HTWidget.swift in Sources */,
-				05101AA524FE2E73009678F1 /* HTStatusView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -820,6 +900,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		05800C712508FA8B0029B5C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05800C862508FAB60029B5C9 /* HTEntryProvider.swift in Sources */,
+				05800C882508FAEB0029B5C9 /* HTEventsModel.xcdatamodeld in Sources */,
+				05800C872508FAE70029B5C9 /* HTCoreDataManager.swift in Sources */,
+				05800C892508FAF00029B5C9 /* HTEvent.swift in Sources */,
+				05800C8A2508FAF40029B5C9 /* HTUtil.swift in Sources */,
+				05800C8B2508FAF70029B5C9 /* HTEventReqService.swift in Sources */,
+				05800C932508FD020029B5C9 /* HTWidget.swift in Sources */,
+				05800C8C2508FB020029B5C9 /* HTDateEx.swift in Sources */,
+				05800C8D2508FB070029B5C9 /* HTEventViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -837,6 +933,11 @@
 			isa = PBXTargetDependency;
 			target = 05101A8624FE296A009678F1 /* widgetExtension */;
 			targetProxy = 05101A9224FE296B009678F1 /* PBXContainerItemProxy */;
+		};
+		05800C802508FA8C0029B5C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05800C742508FA8B0029B5C9 /* widgetMacOSExtension */;
+			targetProxy = 05800C7F2508FA8C0029B5C9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1195,6 +1296,7 @@
 		055BBF6C24A1D862003DD601 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
@@ -1222,6 +1324,7 @@
 		055BBF6D24A1D862003DD601 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
@@ -1241,6 +1344,54 @@
 				PRODUCT_NAME = HistoryToday;
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "Shared/Resource/iOS-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		05800C832508FA8C0029B5C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = widgetMacOS/widgetMacOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6E5KV5Z7QF;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = widgetMacOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qingyuanyu.HistoryToday.Mac.widgetMacOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		05800C842508FA8C0029B5C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = widgetMacOS/widgetMacOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6E5KV5Z7QF;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = widgetMacOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qingyuanyu.HistoryToday.Mac.widgetMacOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -1311,6 +1462,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		05800C822508FA8C0029B5C9 /* Build configuration list for PBXNativeTarget "widgetMacOSExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05800C832508FA8C0029B5C9 /* Debug */,
+				05800C842508FA8C0029B5C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -1338,12 +1498,17 @@
 			package = 05FC774C24AE04F300F68588 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = KingfisherSwiftUI;
 		};
-		05101AA624FE2F3E009678F1 /* SwiftyJSON */ = {
+		05800C6E2508F9290029B5C9 /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 05FC774924AE03ED00F68588 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
 		};
-		05101AA824FE2F4A009678F1 /* KingfisherSwiftUI */ = {
+		05800C8E2508FB100029B5C9 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 05FC774924AE03ED00F68588 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		05800C902508FB100029B5C9 /* KingfisherSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 05FC774C24AE04F300F68588 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = KingfisherSwiftUI;

@@ -42,7 +42,7 @@ struct HTMainView: View {
             
             Text("")
         }
-        .frame(minWidth: 800, maxWidth: .infinity, minHeight: 600, maxHeight: .infinity)
+        .frame(minWidth: 800, idealWidth: 800, maxWidth: .infinity, minHeight: 600, idealHeight: 600, maxHeight: .infinity)
         #endif
     }
 }

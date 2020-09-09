@@ -23,9 +23,9 @@ struct HTCarouselView: View {
                     LazyHStack(alignment: .center, spacing: 0) {
                         ForEach(imgURLs, id: \.self) {
                             HTCardImageView(imgURL: $0)
-                                .background(Color.white)
                                 .frame(width: geo.size.width - 40, height: geo.size.height - 40)
                                 .shadow(radius: 4)
+                                .background(Color.white)
                         }
                         .frame(width: geo.size.width, alignment: .center)
                     }
@@ -41,6 +41,7 @@ struct HTCardImageView: View {
     
     var body: some View {
         GeometryReader { geo in
+            #if !os(macOS)
             KFImage(URL(string: imgURL),
                     options: [
                         .processor(
@@ -48,13 +49,17 @@ struct HTCardImageView: View {
                         )
                     ])
                 .placeholder {
-                    #if !os(macOS)
                     ProgressView()
-                    #endif
                 }
                 .cancelOnDisappear(true)
                 .resizable()
                 .cornerRadius(10)
+            #else
+            KFImage(URL(string: imgURL))
+                .cancelOnDisappear(true)
+                .resizable()
+                .cornerRadius(10)
+            #endif
         }
     }
 }
