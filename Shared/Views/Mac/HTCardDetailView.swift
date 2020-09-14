@@ -13,7 +13,7 @@ struct HTCardDetailView: View {
     @StateObject var event: HTEvent
     
     let clipShape = RoundedRectangle(cornerRadius: 20, style: .continuous)
-    let gridItems = [GridItem(.adaptive(minimum: 130, maximum: 130), spacing: 16, alignment: .top)]
+    let gridItems = [GridItem(.adaptive(minimum: 200, maximum: 200), spacing: 16, alignment: .top)]
     
     var body: some View {
         GeometryReader { proxy in
@@ -40,25 +40,27 @@ struct HTCardDetailView: View {
                         .stroke(Color.primary.opacity(0.1), lineWidth: 1)
                 )
                 
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text("相关图片")
-                            .font(.custom(ktFont, size: 26)).bold()
-                            .foregroundColor(.secondary)
+                if event.imgs.count != 0 {
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Text("相关图片")
+                                .font(.custom(ktFont, size: 26)).bold()
+                                .foregroundColor(.secondary)
+                            
+                            Image(systemName: "photo.on.rectangle.angled")
+                            
+                            Spacer()
+                        }
                         
-                        Image(systemName: "photo.on.rectangle.angled")
-                        
-                        Spacer()
-                    }
-                    
-                    LazyVGrid(columns: gridItems, alignment: .leading, spacing: 16) {
-                        ForEach(event.imgs, id: \.self) { url in
-                            HTCardImageView(imgURL: url)
-                                .aspectRatio(1, contentMode: .fit)
+                        LazyVGrid(columns: gridItems, alignment: .leading, spacing: 16) {
+                            ForEach(event.imgs, id: \.self) { url in
+                                HTCardImageView(imgURL: url)
+                                    .aspectRatio(1, contentMode: .fit)
+                            }
                         }
                     }
+                    .padding()
                 }
-                .padding()
                 
                 VStack(alignment: .leading) {
                     HStack {

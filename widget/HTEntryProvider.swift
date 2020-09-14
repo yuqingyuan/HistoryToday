@@ -19,12 +19,21 @@ struct HTEntryProvider: TimelineProvider {
     }
 
     func getSnapshot(in context: Context, completion: @escaping (HTSimpleEventEntry) -> ()) {
-        var entry = HTSimpleEventEntry(date: Date(), eventYear: String(Date().year!), detail: "历史上的今天")
-        entry.isPreview = context.isPreview
-        completion(entry)
+        // 预览
+        let param = EventReqParam(month: Date().month!, day: Date().day!, pageIndex: 0, pageSize: 1, type: .normal)
+        HTEventReqService.fetchEvents(param).sink { _ in
+            
+        } receiveValue: { events in
+            if let event = events.first {
+                let entry = HTSimpleEventEntry(date: Date(), eventYear: event.displayYear, detail: event.detail)
+                completion(entry)
+            }
+        }
+        .store(in: &cancellable)
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<HTSimpleEventEntry>) -> ()) {
+        // 拉取全部事件，5分钟刷新一次
         let param = EventReqParam(month: Date().month!, day: Date().day!, pageIndex: 0, pageSize: 24, type: .normal)
         HTEventReqService.fetchEvents(param).sink { _ in
             
