@@ -10,7 +10,9 @@ import Foundation
 import SwiftyJSON
 import CoreData
 import Combine
-import OSLog
+import os
+
+fileprivate let logger = Logger(subsystem: "com.qingyuanyu.HistoryToday", category: "CoreData")
 
 class HTCoreDataManager: NSObject {
     static let shared = HTCoreDataManager()
@@ -33,6 +35,7 @@ extension HTCoreDataManager {
     private func createHTEventMainContext() -> NSManagedObjectContext {
         let bundle = Bundle(for: HTEvent.classForCoder())
         guard let model = NSManagedObjectModel.mergedModel(from: [bundle]) else {
+            logger.fault("model not found")
             fatalError("【CoreData】model not found")
         }
         let persistent = NSPersistentStoreCoordinator(managedObjectModel: model)
@@ -40,7 +43,7 @@ extension HTCoreDataManager {
             try persistent.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: storeURL, options: nil)
         } catch {
             let err = error as NSError
-            os_log(.error, "【CoreData】create context error %@", err.userInfo)
+            logger.error("create context error \(err.userInfo)")
         }
         let context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
         context.persistentStoreCoordinator = persistent
@@ -54,10 +57,8 @@ extension HTCoreDataManager {
                 try context.save()
             } catch {
                 let err = error as NSError
-                os_log(.error, "【CoreData】saving context error %@", err.userInfo)
+                logger.error("saving context error \(err.userInfo)")
             }
-        } else {
-            os_log("【CoreData】context has no changes")
         }
     }
     
@@ -69,7 +70,7 @@ extension HTCoreDataManager {
             }
             saveContext()
         } else {
-            os_log("【CoreData】insert event error")
+            logger.error("insert event error")
         }
         return htEvents
     }
@@ -91,7 +92,7 @@ extension HTCoreDataManager {
             }
         } catch {
             publisher.send(completion: .failure(error))
-            os_log(.error, "【CoreData】get events error, month = %d, day = %d", param.month, param.day)
+            logger.error("get events error, month = \(param.month), day = \(param.day)")
         }
         return publisher
     }

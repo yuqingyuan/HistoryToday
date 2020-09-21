@@ -7,7 +7,9 @@
 //
 
 import Foundation
-import OSLog
+import os
+
+fileprivate let logger = Logger(subsystem: "com.qingyuanyu.HistoryToday", category: "Ping")
 
 class HTHostPingTool: NSObject {
     
@@ -43,23 +45,23 @@ class HTHostPingTool: NSObject {
 extension HTHostPingTool: SimplePingDelegate {
     
     func simplePing(_ pinger: SimplePing, didStartWithAddress address: Data) {
-        os_log(.info, "【SimplePing】start ping %s", pinger.hostName)
+        logger.info("start ping \(pinger.hostName)")
         pinger.send(with: nil)
     }
     
     func simplePing(_ pinger: SimplePing, didFailWithError error: Error) {
-        os_log(.error, "【SimplePing】error %s", error.localizedDescription)
+        logger.error("error \(error.localizedDescription)")
         pinger.stop()
     }
     
     func simplePing(_ pinger: SimplePing, didSendPacket packet: Data, sequenceNumber: UInt16) {
-        os_log(.info, "【SimplePing】send packet %d", sequenceNumber)
+        logger.info("send packet \(sequenceNumber)")
         sequenceNums.append(sequenceNumber)
         // 检查是否有回包
         DispatchQueue.main.asyncAfter(deadline: .now()+interval) {
             let hasRes = !self.sequenceNums.contains(sequenceNumber)
             if !hasRes {
-                os_log(.info, "【SimplePing】didn't receive response from %s", pinger.hostName)
+                logger.log(level: .info, "didn't receive response from \(pinger.hostName)")
             }
             self.pingCallback(hasRes)
             self.stop()
@@ -67,17 +69,17 @@ extension HTHostPingTool: SimplePingDelegate {
     }
     
     func simplePing(_ pinger: SimplePing, didReceiveUnexpectedPacket packet: Data) {
-        os_log(.info, "【SimplePing】receive unexpected packet")
+        logger.info("receive unexpected packet")
     }
     
     func simplePing(_ pinger: SimplePing, didReceivePingResponsePacket packet: Data, sequenceNumber: UInt16) {
-        os_log(.info, "【SimplePing】receive ping response %d", sequenceNumber)
+        logger.info("receive ping response \(sequenceNumber)")
         if let index = sequenceNums.firstIndex(of: sequenceNumber) {
             sequenceNums.remove(at: index)
         }
     }
     
     func simplePing(_ pinger: SimplePing, didFailToSendPacket packet: Data, sequenceNumber: UInt16, error: Error) {
-        os_log(.info, "【SimplePing】fail to send packet %d %s", sequenceNumber, error.localizedDescription)
+        logger.info("fail to send packet \(sequenceNumber) \(error.localizedDescription)")
     }
 }

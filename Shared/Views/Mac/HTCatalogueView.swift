@@ -31,7 +31,7 @@ struct HTCatalogueView: View {
             Spacer()
 
             Image(systemName: "chevron.right")
-                .foregroundColor(.blue)
+                .foregroundColor(.gray)
         }
     }
 }
