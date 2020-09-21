@@ -77,6 +77,7 @@
 		05B7226724EA6D410091D9E9 /* HTFPSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B7226624EA6D410091D9E9 /* HTFPSLabel.swift */; };
 		05B7227124EAA8050091D9E9 /* HTStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B7227024EAA8050091D9E9 /* HTStatusView.swift */; };
 		05B8893424C072EF000ABA7C /* HTEventReqService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B8893324C072EF000ABA7C /* HTEventReqService.swift */; };
+		05D6819D2518AC4D00E2D421 /* HTSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D6819C2518AC4D00E2D421 /* HTSettingsView.swift */; };
 		05DE071E24D93FAD00F45AE8 /* HTHyperLinkText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DE071D24D93FAD00F45AE8 /* HTHyperLinkText.swift */; };
 		05E1CF6324E050D900081C83 /* FZKaiTi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05E1CF6224E050D900081C83 /* FZKaiTi.ttf */; };
 		05EA09B524DD4D1F002CDB34 /* HTCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EA09B224DD4D1F002CDB34 /* HTCardView.swift */; };
@@ -171,6 +172,7 @@
 		05B7226624EA6D410091D9E9 /* HTFPSLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTFPSLabel.swift; sourceTree = "<group>"; };
 		05B7227024EAA8050091D9E9 /* HTStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTStatusView.swift; sourceTree = "<group>"; };
 		05B8893324C072EF000ABA7C /* HTEventReqService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTEventReqService.swift; sourceTree = "<group>"; };
+		05D6819C2518AC4D00E2D421 /* HTSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTSettingsView.swift; sourceTree = "<group>"; };
 		05DE071D24D93FAD00F45AE8 /* HTHyperLinkText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTHyperLinkText.swift; sourceTree = "<group>"; };
 		05E1CF6224E050D900081C83 /* FZKaiTi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FZKaiTi.ttf; sourceTree = "<group>"; };
 		05EA09B224DD4D1F002CDB34 /* HTCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTCardView.swift; sourceTree = "<group>"; };
@@ -416,6 +418,7 @@
 				05ED06CA25064CA70092BFB5 /* HTCardListHeader.swift */,
 				05EA09B224DD4D1F002CDB34 /* HTCardView.swift */,
 				05A08F8925008DAB005CCF65 /* HTCarouselView.swift */,
+				05D6819C2518AC4D00E2D421 /* HTSettingsView.swift */,
 				05B7227024EAA8050091D9E9 /* HTStatusView.swift */,
 			);
 			name = Views;
@@ -640,6 +643,7 @@
 				05EA09BC24DD4E56002CDB34 /* HTWKWebView.swift in Sources */,
 				05B7227124EAA8050091D9E9 /* HTStatusView.swift in Sources */,
 				05A08F7624FF43F8005CCF65 /* SimplePing.m in Sources */,
+				05D6819D2518AC4D00E2D421 /* HTSettingsView.swift in Sources */,
 				05EA09B924DD4D1F002CDB34 /* HTMainView.swift in Sources */,
 				052E1BA624C9333500B55B5D /* HTUtil.swift in Sources */,
 				05A08F8A25008DAB005CCF65 /* HTCarouselView.swift in Sources */,

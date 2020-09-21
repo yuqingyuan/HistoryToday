@@ -16,15 +16,26 @@ struct HTMainView: View {
     
     var body: some View {
         #if !os(macOS)
-        VStack(spacing: 0) {
-            VStack {
-                HTCardListHeader(eventVM: eventVM)
-                Divider()
+        TabView {
+            VStack(spacing: 0) {
+                VStack {
+                    HTCardListHeader(eventVM: eventVM)
+                    
+                    Divider()
+                }
+                .padding([.leading, .trailing])
+                
+                HTCardListView(eventVM: eventVM)
+                    .ignoresSafeArea(.all, edges: [.bottom])
             }
-            .padding([.leading, .trailing])
+            .tabItem {
+                Image(systemName: "newspaper")
+            }
             
-            HTCardListView(eventVM: eventVM)
-                .ignoresSafeArea(.all, edges: [.bottom])
+            HTSettingsView()
+                .tabItem {
+                    Image(systemName: "gear")
+                }
         }
         #else
         NavigationView {
