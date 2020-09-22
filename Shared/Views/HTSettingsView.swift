@@ -9,25 +9,34 @@
 import SwiftUI
 
 struct HTSettingsView: View {
+    @StateObject var appSetting = HTAppSetting.shared
+    
     var body: some View {
         NavigationView {
             Form {
                 Section {
-                    Picker(selection: .constant(1), label: Text("关键词来源")) {
-                        Text("维基百科").tag(1)
-                        Text("百度百科").tag(2)
+                    Picker(selection: $appSetting.source, label: Text("关键词来源")) {
+                        ForEach(HTAppSetting.KeywordHost.allCases) { (source: HTAppSetting.KeywordHost) in
+                            Text(source.description).tag(source)
+                        }
                     }
                 }
                 
-                Section(header: Text("通用")) {
-                    Toggle("深色模式", isOn: .constant(false))
-                    
-                    Toggle("主题模式跟随系统外观", isOn: .constant(false))
-                }
-                
-                Section(header: Text("存储空间"), footer: Text("可清理本地图片等数据")) {
-                    Button("清除缓存") {
+                Section {
+                    HStack {
+                        Button("清除缓存") {
+                            appSetting.cleanDiskCache()
+                        }
+                        .disabled(appSetting.isLoadingCache)
                         
+                        Spacer()
+                        
+                        if appSetting.isLoadingCache {
+                            ProgressView()
+                        } else {
+                            Text(appSetting.diskCache)
+                                .foregroundColor(.secondary)
+                        }
                     }
                 }
                 
@@ -38,6 +47,9 @@ struct HTSettingsView: View {
                 }
             }
             .navigationTitle(Text("设置"))
+        }
+        .onAppear {
+            appSetting.loadDiskCacheStorage()
         }
     }
 }

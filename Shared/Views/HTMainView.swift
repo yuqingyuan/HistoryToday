@@ -10,33 +10,43 @@ import SwiftUI
 struct HTMainView: View {
     
     @StateObject var eventVM: HTEventViewModel
+    @State var showSetting = false
     #if os(macOS)
     @State private var selection: Set<EventType> = [.normal]
     #endif
     
+    private var settingButton: some View {
+        Button {
+            showSetting.toggle()
+        } label: {
+            Image(systemName: "gearshape.2")
+                .padding()
+                .background(
+                    Circle()
+                        .foregroundColor(.white)
+                        .shadow(radius: 4)
+                )
+        }
+        .sheet(isPresented: $showSetting) {
+            HTSettingsView()
+        }
+    }
+    
     var body: some View {
         #if !os(macOS)
-        TabView {
-            VStack(spacing: 0) {
-                VStack {
-                    HTCardListHeader(eventVM: eventVM)
-                    
-                    Divider()
-                }
-                .padding([.leading, .trailing])
+        VStack(spacing: 0) {
+            VStack {
+                HTCardListHeader(eventVM: eventVM)
                 
-                HTCardListView(eventVM: eventVM)
-                    .ignoresSafeArea(.all, edges: [.bottom])
+                Divider()
             }
-            .tabItem {
-                Image(systemName: "newspaper")
-            }
+            .padding([.leading, .trailing])
             
-            HTSettingsView()
-                .tabItem {
-                    Image(systemName: "gear")
-                }
+            HTCardListView(eventVM: eventVM)
+                .ignoresSafeArea(.all, edges: [.bottom])
         }
+        .overlay(settingButton.padding(), alignment: .bottomTrailing)
+        .background(Color(.systemGray6).ignoresSafeArea())
         #else
         NavigationView {
             List(selection: $selection) {

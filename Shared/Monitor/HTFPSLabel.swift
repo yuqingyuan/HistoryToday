@@ -6,6 +6,7 @@
 //  Copyright © 2020 俞清源. All rights reserved.
 //
 
+#if DEBUG
 import UIKit
 import SwiftUI
 
@@ -85,3 +86,4 @@ struct HTFPSLabel: UIViewRepresentable {
 
     }
 }
+#endif
