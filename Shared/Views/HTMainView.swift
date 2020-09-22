@@ -37,16 +37,17 @@ struct HTMainView: View {
         VStack(spacing: 0) {
             VStack {
                 HTCardListHeader(eventVM: eventVM)
+                    .padding([.leading, .trailing])
                 
                 Divider()
             }
-            .padding([.leading, .trailing])
+            .background(Color("mainHeaderColor").ignoresSafeArea())
             
             HTCardListView(eventVM: eventVM)
                 .ignoresSafeArea(.all, edges: [.bottom])
         }
         .overlay(settingButton.padding(), alignment: .bottomTrailing)
-        .background(Color(.systemGray6).ignoresSafeArea())
+        .background(Color("mainViewColor").ignoresSafeArea())
         #else
         NavigationView {
             List(selection: $selection) {

@@ -47,3 +47,13 @@ struct HTCardListHeader: View {
         }
     }
 }
+
+#if DEBUG
+struct HTCardListHeader_Previews: PreviewProvider {
+    static var previews: some View {
+        HTCardListHeader(eventVM: HTEventViewModel(type: .normal))
+            .padding()
+            .background(Color(.systemGray5).ignoresSafeArea())
+    }
+}
+#endif
