@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct HTSettingsView: View {
-    @EnvironmentObject var appSetting: HTAppSetting
+    @StateObject var appSetting = HTAppSetting.shared
     
     var body: some View {
         NavigationView {

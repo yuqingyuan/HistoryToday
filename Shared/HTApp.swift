@@ -23,7 +23,6 @@ struct HTApp: App {
                 .onAppear {
                     appSetting.loadSetting()
                 }
-                .environmentObject(appSetting)
         }
     }
 }
