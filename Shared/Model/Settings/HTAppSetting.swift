@@ -35,8 +35,6 @@ class HTAppSetting: ObservableObject {
     
     /// 关键词来源
     @Published var source: KeywordHost = .baidu
-    /// 深色模式
-    @Published var isDarkMode: Bool = false
     /// 磁盘缓存大小
     @Published var diskCache: String = "0.0 MB"
     /// 是否正在计算磁盘缓存大小

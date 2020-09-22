@@ -50,6 +50,7 @@ extension HTCoreDataManager {
         context.stalenessInterval = 0
         return context
     }
+    
     private func saveContext() {
         if context.hasChanges {
             do {

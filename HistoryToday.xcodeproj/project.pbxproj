@@ -27,6 +27,9 @@
 		05101AAB24FE490F009678F1 /* FZKaiTi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05E1CF6224E050D900081C83 /* FZKaiTi.ttf */; };
 		05101AAC24FE4911009678F1 /* FZKaiTi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05E1CF6224E050D900081C83 /* FZKaiTi.ttf */; };
 		05145FE324AB63D0006A0EFA /* HTEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05145FE224AB63D0006A0EFA /* HTEvent.swift */; };
+		05222A402519FF3F006639C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 055BBF3924A1D862003DD601 /* Assets.xcassets */; };
+		05222A452519FF40006639C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 055BBF3924A1D862003DD601 /* Assets.xcassets */; };
+		05222A4B251A1F21006639C6 /* HTAboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05222A4A251A1F21006639C6 /* HTAboutView.swift */; };
 		0526276024C5BAE900EFE562 /* HTEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526275F24C5BAE900EFE562 /* HTEventViewModel.swift */; };
 		052E1BA624C9333500B55B5D /* HTUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052E1BA524C9333500B55B5D /* HTUtil.swift */; };
 		055BBF6024A1D862003DD601 /* HTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055BBF3724A1D861003DD601 /* HTApp.swift */; };
@@ -146,6 +149,7 @@
 		05101A8F24FE296B009678F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05101A9124FE296B009678F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05145FE224AB63D0006A0EFA /* HTEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTEvent.swift; sourceTree = "<group>"; };
+		05222A4A251A1F21006639C6 /* HTAboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTAboutView.swift; sourceTree = "<group>"; };
 		0526275F24C5BAE900EFE562 /* HTEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTEventViewModel.swift; sourceTree = "<group>"; };
 		052E1BA524C9333500B55B5D /* HTUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTUtil.swift; sourceTree = "<group>"; };
 		055BBF3724A1D861003DD601 /* HTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTApp.swift; sourceTree = "<group>"; };
@@ -420,6 +424,7 @@
 				05A08F8925008DAB005CCF65 /* HTCarouselView.swift */,
 				05D6819C2518AC4D00E2D421 /* HTSettingsView.swift */,
 				05B7227024EAA8050091D9E9 /* HTStatusView.swift */,
+				05222A4A251A1F21006639C6 /* HTAboutView.swift */,
 			);
 			name = Views;
 			path = Shared/Views;
@@ -584,6 +589,7 @@
 			files = (
 				05101AAA24FE32C9009678F1 /* HTEventTest.json in Resources */,
 				05101A9024FE296B009678F1 /* Assets.xcassets in Resources */,
+				05222A402519FF3F006639C6 /* Assets.xcassets in Resources */,
 				05101AAB24FE490F009678F1 /* FZKaiTi.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -612,6 +618,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05222A452519FF40006639C6 /* Assets.xcassets in Resources */,
 				05800C7C2508FA8C0029B5C9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -647,6 +654,7 @@
 				05EA09B924DD4D1F002CDB34 /* HTMainView.swift in Sources */,
 				052E1BA624C9333500B55B5D /* HTUtil.swift in Sources */,
 				05A08F8A25008DAB005CCF65 /* HTCarouselView.swift in Sources */,
+				05222A4B251A1F21006639C6 /* HTAboutView.swift in Sources */,
 				0526276024C5BAE900EFE562 /* HTEventViewModel.swift in Sources */,
 				05B7226724EA6D410091D9E9 /* HTFPSLabel.swift in Sources */,
 				05B8893424C072EF000ABA7C /* HTEventReqService.swift in Sources */,

@@ -42,8 +42,8 @@ struct HTWidgetEntryView : View {
             
             Spacer()
         }
-        .foregroundColor(.white)
-        .background(rgb(47, 49, 54))
+        .foregroundColor(Color("mainTextColor"))
+        .background(Color("mainViewColor"))
     }
 }
 

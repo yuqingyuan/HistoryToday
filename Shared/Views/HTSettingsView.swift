@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct HTSettingsView: View {
-    @StateObject var appSetting = HTAppSetting.shared
+    @EnvironmentObject var appSetting: HTAppSetting
     
     var body: some View {
         NavigationView {
@@ -41,7 +41,7 @@ struct HTSettingsView: View {
                 }
                 
                 Section {
-                    NavigationLink(destination: Text("关于")) {
+                    NavigationLink(destination: HTAboutView()) {
                         Text("关于")
                     }
                 }
