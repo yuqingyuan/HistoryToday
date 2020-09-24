@@ -74,11 +74,3 @@ extension HTEvent {
         return "关键词：无"
     }
 }
-
-#if DEBUG
-var preview_event: HTEvent {
-    let path = Bundle.main.path(forResource: "HTEventTest", ofType: "json")!
-    let json = try! JSON(data: Data(contentsOf: URL(fileURLWithPath: path)))
-    return HTEvent(HTCoreDataManager.shared.entity!, json: json, date: "1-1", context: HTCoreDataManager.shared.context)
-}
-#endif

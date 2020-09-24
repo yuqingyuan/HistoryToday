@@ -24,7 +24,7 @@ struct HTCarouselView: View {
                         ForEach(imgURLs, id: \.self) { url in
                             ZStack {
                                 Rectangle()
-                                    .foregroundColor(.white)
+                                    .foregroundColor(Color("mainViewColor"))
                                     .cornerRadius(10)
                                     .shadow(radius: 4)
                                     
@@ -68,6 +68,7 @@ struct HTCardImageView: View {
                 }
                 .cancelOnDisappear(true)
                 .resizable()
+                .background(Color("mainViewColor"))
                 .cornerRadius(10)
             #else
             KFImage(URL(string: imgURL))

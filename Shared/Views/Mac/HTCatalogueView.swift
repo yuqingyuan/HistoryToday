@@ -35,13 +35,3 @@ struct HTCatalogueView: View {
         }
     }
 }
-
-#if DEBUG
-struct HTCatalogueList_Previews: PreviewProvider {
-    static var previews: some View {
-        HTCatalogueView(event: preview_event)
-            .fixedSize()
-            .padding()
-    }
-}
-#endif

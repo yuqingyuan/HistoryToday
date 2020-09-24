@@ -34,6 +34,7 @@ struct HTCardView: View {
             
             HTHyperLinkText(text: event.detail, configuration: event.links) { link in
                 keyLink = HTEventKeywordLink(link: link)
+                triggerImpact(style: .medium)
             }
             .padding([.leading, .trailing])
             
@@ -44,11 +45,3 @@ struct HTCardView: View {
         }
     }
 }
-
-#if DEBUG
-struct HTCardView_Preview: PreviewProvider {
-    static var previews: some View {
-        HTCardView(event: preview_event)
-    }
-}
-#endif

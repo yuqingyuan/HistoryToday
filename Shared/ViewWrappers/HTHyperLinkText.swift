@@ -72,7 +72,7 @@ extension UITextView {
             attributedText.addAttribute(.link, value: link, range: linkRange)
         }
         self.linkTextAttributes = [
-            .foregroundColor: UIColor(rgb(235,87,87))
+            .foregroundColor: UIColor(rgb(240, 65, 85))
         ]
         attributedText.addAttribute(.paragraphStyle, value: style, range: fullRange)
         attributedText.addAttribute(.font, value: UIFont(name: ktFont, size: fitFont(18))!, range: fullRange)

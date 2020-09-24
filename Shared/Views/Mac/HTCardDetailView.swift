@@ -99,16 +99,3 @@ struct HTKeywordLinkView: View {
         }
     }
 }
-
-#if DEBUG
-struct HTCardDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            HTKeywordLinkView(event: .constant(preview_event))
-            HTImageGridView(imgs: .constant(preview_event.imgs))
-            HTCardDetailView(event: preview_event)
-                .frame(minWidth: 800, maxWidth: .infinity, minHeight: 800, maxHeight: .infinity)
-        }
-    }
-}
-#endif

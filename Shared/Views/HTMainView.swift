@@ -18,6 +18,7 @@ struct HTMainView: View {
     private var settingButton: some View {
         Button {
             showSetting.toggle()
+            triggerImpact(style: .medium)
         } label: {
             Image(systemName: "gearshape.2")
                 .padding()
