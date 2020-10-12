@@ -44,7 +44,7 @@ struct HTMainView: View {
             }
             .background(Color("mainHeaderColor").ignoresSafeArea())
             
-            if eventVM.events.count == 0 {
+            if eventVM.events.count == 0 && !eventVM.isLoading {
                 Spacer()
                 
                 VStack {
