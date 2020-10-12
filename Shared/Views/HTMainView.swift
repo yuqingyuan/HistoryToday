@@ -44,8 +44,20 @@ struct HTMainView: View {
             }
             .background(Color("mainHeaderColor").ignoresSafeArea())
             
-            HTCardListView(eventVM: eventVM)
-                .ignoresSafeArea(.all, edges: [.bottom])
+            if eventVM.events.count == 0 {
+                Spacer()
+                
+                VStack {
+                    Image("ht_empty_sad")
+                        .foregroundColor(.blue)
+                    Text("没能找到相关数据")
+                }
+                
+                Spacer()
+            } else {
+                HTCardListView(eventVM: eventVM)
+                    .ignoresSafeArea(.all, edges: [.bottom])
+            }
         }
         .overlay(settingButton.padding(), alignment: .bottomTrailing)
         .background(Color("mainViewColor").ignoresSafeArea())

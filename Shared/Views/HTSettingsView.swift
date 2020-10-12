@@ -14,12 +14,27 @@ struct HTSettingsView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section {
+                Section(header: Text("关键词来源与您当前的网络环境有关")) {
                     Picker(selection: $appSetting.source, label: Text("关键词来源")) {
                         ForEach(HTAppSetting.KeywordHost.allCases) { (source: HTAppSetting.KeywordHost) in
-                            Text(source.description).tag(source)
+                            if appSetting.isPinging {
+                                HStack(spacing: 4) {
+                                    ProgressView()
+                                    Text(source.description)
+                                }
+                                .tag(source)
+                            } else {
+                                Text(source.description)
+                                    .tag(source)
+                            }
                         }
                     }
+                    .onChange(of: appSetting.source) {
+                        if $0 == .wiki {
+                            appSetting.startPing()
+                        }
+                    }
+                    .disabled(appSetting.isPinging)
                 }
                 
                 Section {

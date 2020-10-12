@@ -60,7 +60,10 @@ struct HTCardImageView: View {
                     if !failure {
                         ProgressView()
                     } else {
-                        Image(systemName: "bandage")
+                        VStack {
+                            Image("ht_empty_sad")
+                            Text("图片加载失败")
+                        }
                     }
                 }
                 .onFailure { _ in

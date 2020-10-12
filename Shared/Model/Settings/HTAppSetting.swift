@@ -31,25 +31,37 @@ class HTAppSetting: ObservableObject {
         }
     }
     
-    private var pingTool: HTHostPingTool?
-    
     /// 关键词来源
     @Published var source: KeywordHost = .baidu
     /// 磁盘缓存大小
     @Published var diskCache: String = "0.0 MB"
     /// 是否正在计算磁盘缓存大小
     @Published var isLoadingCache: Bool = false
-}
-
-extension HTAppSetting {
-    func loadSetting() {
+    /// 是否正在检测关键词来源是否可达
+    @Published var isPinging: Bool = false
+    /// Ping工具
+    private var pingTool: HTHostPingTool?
+    
+    init() {
+        self.startPing()
+    }
+    
+    func startPing() {
+        pingTool?.stop()
+        self.isPinging = true
         pingTool = HTHostPingTool(host: KeywordHost.wiki.rawValue, timeout: 1.5) { [weak self] receive in
             if receive {
                 self?.source = .wiki
+            } else {
+                self?.source = .baidu
             }
+            self?.isPinging = false
         }
         pingTool?.start()
     }
+}
+
+extension HTAppSetting {
     
     func loadDiskCacheStorage() {
         isLoadingCache = true

@@ -19,7 +19,7 @@ struct HTImageLostView: View {
                 .padding()
             
             VStack(spacing: 6) {
-                Image(systemName: "exclamationmark.triangle.fill")
+                Image("ht_empty_sad")
                     .foregroundColor(.yellow)
                     .font(.largeTitle)
                 Text("没能找到相关图片")

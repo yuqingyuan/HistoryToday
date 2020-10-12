@@ -20,9 +20,6 @@ struct HTApp: App {
     var body: some Scene {
         WindowGroup {
             HTMainView(eventVM: .init(type: .normal))
-                .onAppear {
-                    appSetting.loadSetting()
-                }
         }
     }
 }
