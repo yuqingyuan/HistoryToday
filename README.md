@@ -10,4 +10,4 @@ HistoryToday is an application that uses data crawled from Wikipedia and is buil
 
 ## Platforms
 
-Currently MovieSwiftUI runs on iPhone, iPad, and macOS (❌ widget for macOS can be built right now, you can delete widget target to run the project). 
+Currently MovieSwiftUI runs on iPhone, iPad, and macOS (❌ widget for macOS can't be built right now, you can delete widget target to run the project). 
