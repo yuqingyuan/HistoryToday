@@ -6,7 +6,7 @@ HistoryToday have been upgraded to the latest SwiftUI features, so you have to u
 
 HistoryToday is an application that uses data crawled from Wikipedia and is built with SwiftUI. The goal is to make a real world application using SwiftUI only and see what SwiftUI can do. It'll be updated with new features as they come to the SwiftUI framework.
 
-![main](images/main.png) ![widget](images/widget.png)
+![main](images/main.png)
 
 ## Platforms
 
